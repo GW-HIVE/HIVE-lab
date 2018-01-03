@@ -1,1 +1,1 @@
-# mazumder-lab
+# Mazumder's Lab
