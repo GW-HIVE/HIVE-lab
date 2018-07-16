@@ -1,0 +1,15 @@
+nucl_est.accession2taxid.gz
+TaxID mapping for live nucleotide sequence records of type EST.
+
+nucl_gss.accession2taxid.gz
+TaxID mapping for live nucleotide sequence records of type GSS.
+
+nucl_wgs.accession2taxid.gz
+TaxID mapping for live nucleotide sequence records of type WGS or TSA.
+
+nucl_gb.accession2taxid.gz
+TaxID mapping for live nucleotide sequence records that are not EST, GSS, WGS or
+TSA.
+
+
+

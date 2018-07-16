@@ -1,0 +1,61 @@
+
+************************************************************************
+* Downloaded Files
+************************************************************************
+1. nt file downloaded on 5/21/2017 
+   ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/)
+
+	42,439,338 	sequences
+
+
+2. names.dump downloaded on 5/21/2017 
+   ftp://ftp.ncbi.nih.gov/pub/taxonomy/
+
+	2,383,434 	names
+	1,601,859 	scientific names
+
+
+3. ac2taxid files 
+   ftp://ftp.ncbi.nih.gov/pub/taxonomy/
+
+	#records	file name
+	39,775,235	nucl_gss.accession2taxid.2017-05-21
+	122,045,527	nucl_gb.accession2taxid.2017-05-21
+	76,436,508	nucl_est.accession2taxid.2017-05-21
+	361,700,039	nucl_wgs.accession2taxid.2017-05-21
+	12,406,761	ac2taxid.2017-05-30/dead_nucl.accession2taxid
+	39,775,235	ac2taxid.2017-05-30/nucl_gss.accession2taxid
+	122,236,860	ac2taxid.2017-05-30/nucl_gb.accession2taxid
+	76,436,632	ac2taxid.2017-05-30/nucl_est.accession2taxid
+	66,696,868	ac2taxid.2017-05-30/dead_wgs.accession2taxid
+	381,019		ac2taxid.2017-05-30/pdb.accession2taxid
+	362,474,815	ac2taxid.2017-05-30/nucl_wgs.accession2taxid
+
+
+************************************************************************
+* Filter statistics
+************************************************************************
+Number of taxonomy ids that are in black list is 378,341.
+
+Sequences from a given black list of sources were removed. This list
+of sources, number of associated taxonomic IDs and number 
+of removed sequences is given below.
+
+
+	blackListTaxonomyName	#taxids	#removered sequences
+	=====================	=======	====================
+	unidentified		49	97
+	uncultured		1	2
+	unknown			342	1026
+	unspecified		68	11435
+	unclassified		182192	847187
+	other sequence		12666	233354
+	phage			4594	8445
+	environmental sample	50697	6398042
+	unknown-manually	1	4
+	====================	=====	=======
+	total			250610	7499592
+
+
+The number of sequences in this filtered-nt release is 
+	34,939,806
