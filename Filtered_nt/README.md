@@ -17,7 +17,7 @@ Unsupported License to this version of the software.
 
 | Downloadable Files | File Size | Release Notes|
 |--------------------|-----------|---------------|
-| [filtered_nt_July_2018](https://hive.biochemistry.gwu.edu/prd/filterednt//content/filtered_nt_July_2018.fasta)| 168G|
+| [filtered_nt_July_2018](https://hive.biochemistry.gwu.edu/prd/filterednt//content/filtered_nt_July_2018.fasta)| 168G|Coming soon!|
 
 
 
@@ -85,9 +85,9 @@ output: /data/projects/targetdbs/generated/logfile.step1.txt
 	/data/projects/targetdbs/generated/logfile.step2.txt
 	/data/projects/targetdbs/generated/logfile.step3.txt
 
-This step needs a lot of memory. Suggest to run on HIVE,
-	Colonial One, or MGPC. 123 records of PDB accessions
-	have extra characters, fixed that in step3.py.
+This step needs a lot of memory. Suggest to run on large machine. 
+        123 records of PDB accessions have extra characters, fixed 
+	that in step3.py.
 	However, 28 records are not in the files, search taxIds
 	manually for them (/data/projects/targetdbs/generated/ \
 	logfile.step3.manually.added.txt).
@@ -114,18 +114,3 @@ protocol: Remember to add those manually added ac2taxids.
 script: /projects/targetdbs/scripts/filter-nt.py
 output: /data/projects/targetdbs/generated/filtered_nt_Jun06-2017.fasta
 QC script: /projects/targetdbs/scripts/check-removed-seqacs-count.py
-
-
-************************************************************************
-## Step 7. Post steps
-************************************************************************
-1. Ask Luis to make sure the right format for Censuscope
-2. Transfer filtered nt and release note to HIVE
-	(/hive/net3/Knowledgebases/Filtered_NT/)
-3. Create a file in /var/www/html/static/ pointing to the filtered nt
-4. Tell Naila the links to the file and the release note:
-	https://hive.biochemistry.gwu.edu/static/filtered_NT_May30_2017.fasta
-5. Tell Luis to update ac2taxid datasets from NCBI in Censuscope
-
-Statistics is shown in Release_note_May31_2017.
-
