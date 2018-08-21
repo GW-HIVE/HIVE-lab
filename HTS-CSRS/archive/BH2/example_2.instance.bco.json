@@ -1,0 +1,99 @@
+{
+	"_id": "obj.20001",
+	"_type":"<a href=# id=linkid_humangutmetagenomicdetection_typedef class=typedef>human_gut_metagenomic_detection</a>",
+	"name": "Healthy Human[taxID:9606] Fecal[UBERON:0001988] Metagenomic Diversity[PCO:0000019]",
+	"version": "1.0",
+	"verification:": "manual",
+	"creation_date": "Mon Jul 25 13:25:21 EDT 2016",
+	"modification_date": "Mon Jul 25 13:25:21 EDT 2016",
+	"publication_status": "draft",
+	"keywords": [
+		"metagenome",
+		"metagenomic analysis"
+	],
+	"xref": [
+		"UBERON:0001988",
+		"taxID:9606",
+		"PCO:0000019"
+		],
+	"usability_domain": [
+		"Identify the most common organism present in a human[taxID:9606] fecal[UBERON:0001988] sample",
+		"Identify the general community composition of organisms in a human[taxID:9606] fecal[UBERON:0001988] sample"
+	],
+	"authors": [
+		{
+			"first_name": "Joshua",
+			"last_name": "Lederberg",
+			"affiliation": "University of Wisconsin"
+		},
+		{
+			"first_name": "Margaret",
+			"last_name": "Dayhoff",
+			"affiliation": "Columbia University"
+		}
+	],
+	"pipeline": "<a href=# id=linkid_humangutmetagenomicdetection_pipeline class=typedef>obj.20001</a>",
+	"DNA_screening": {
+		"taxDepth": "leaf",
+		"storeAlignments": 1,
+		"CensuslimitIterations": 5,
+		"Sample": 2500,
+		"selfStopping": 0
+	},
+	"alignment": {
+		"minMatchLen": 45,
+		"keepAllMatches": 3,
+		"keepMarkovnikovMatches": 1,
+		"complexityRefEntropy": 1.2,
+		"complexityRefWindow": 30,
+		"acceptNNNQuaThreshold": 1,
+		"complexityEntropy": 1.2,
+		"complexityWindow": 30,
+		"maximumPercentLowQualityAllowed": 0
+	},
+	"verification_kit": {
+		"reference_sequence": [
+			{
+				"source": "NCBI",
+				"db": "NucCore",
+				"id": [
+					"CP000139.1",
+					"FP929042.1",
+					"FP929046.1",
+					"FP929045.1",
+					"FP929043.1",
+					"FP929048.1"
+				]
+			}
+		],
+		"sequence_reads": [
+			{
+				"source": "HIVE",
+				"db": "Honeycomb",
+				"id": [
+					"514683",
+					"514682"
+				]
+			}
+		],
+		"reference_db": [
+			{
+				"source": "HIVE",
+				"db": "Honeycomb",
+				"id": ["513957"]
+			}
+		],
+		"accession_based_results": {
+			"format": [".csv"],
+			"filename": "dnaAccessionBasedResult.csv"
+		},
+		"unalignedReads": {
+			"format": [".fasta"],
+			"filename": "Unaligned Reads (HIVE_ID).fasta"
+		},
+		"hit_list": {
+			"format": [".csv"],
+			"filename": "alCount-Unalignedo541205-alCount--1.csv"
+		}
+	}
+}

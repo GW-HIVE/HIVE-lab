@@ -1,0 +1,86 @@
+{
+	"_id": "B4",
+	"_type": "galaxy_workflow_metavisitor",
+	"name": "Nora Virus det in D. mel",
+	"version": "1.0",
+	"verification": "manual",
+	"creation_date": "Wed Jul 27 19:06:11 EDT 2016",
+	"modification_date": "Tue Aug 2 10:12:14 EDT 2016",
+	"publication_status": "draft",
+	"keywords": [
+		"RNA-Seq virus detection",
+		"virus discovery small RNA sequencing",
+		"Virus deep sequence data"
+	],
+	"xref": {
+		"NucCore": ["NC_007919", "JX220408"],
+		"SRA": [ "SRR515090", "SRR513993", "SRR513901"],
+		"ORCID": ["0000-0001-7709-2116","0000-0002-9676-7032","0000-0002-9703-9096"]
+	},
+	"usability_domain": [
+		"Detect and reconstruct viral genomes from sequencing datasets",
+		"Works with DNA, RNA or small RNA sequencing data that provide different read lengths and can use a combination of a de novo and guided approaches to assemble viral genomes from sequencing reads",
+		"workflow has the potential for quick diagnosis as well as discovery of viruses (or other pathogens) from a vast array of organisms"
+	],
+	"authors": [
+		{
+			"first_name": "Christophe",
+			"last_name": "Antoniewski",
+			"affiliation": "CNRS - Institut de Biologie Paris Seine"
+		},
+		{
+			"first_name": "Marius",
+			"last_name": "van den Beek",
+			"affiliation": "IBPS / Universite Pierre et Marie Curie"
+		},
+		{	
+			"first_name": "Kenneth",
+			"last_name": "Vernick",
+			"affiliation": "Institut Pasteur"
+		},
+		{	"first_name": "Juliana",
+			"last_name": "Pegoraro",
+			"affiliation": "Institut Pasteur"
+		},
+		{
+			"first_name": "Guillaume",
+			"last_name": "Carissimo",
+			"affiliation": "Institut Pasteur"
+		}
+	],
+	"pipeline": "obj.10004",
+	"sr_bowtie_v1.1.2": {
+			 "typeMatchingPerformed": "match DNA - RNA-seq mode",
+			 "mismatch_allowed": 2,
+			 "reference_genome" : "built-in"
+		},
+	"ncbi_blastn": {
+			 "max_target_sequences": 10,
+			 "expect_threshold": 1,
+			 "mismatch_scores": "1/-1"
+		},
+	"verification_kit":{
+		"reference_accessions": [
+			{
+				"source": "NCBI",
+				"db": "genbank",
+				"id": ["NC_007919", "JX220408"]
+			}
+		],
+		"sra_accessions": [
+			{
+				"source": "NCBI",
+				"db": "SRA",
+				"id": [
+					"SRR515090", 
+					"SRR513993",
+					"SRR513901"
+				]
+			}
+		],
+		"virus_profile": {
+			"format": [".csv"],
+			"filename": "parse_blastoutput.csv"
+		}
+	}
+}
