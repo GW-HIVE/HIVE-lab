@@ -1,0 +1,92 @@
+{
+    "athena_detection_type_def" : {
+        "_inherit" : "biocompute_base_type",
+        "_fields" : {
+            "parametric_domain": {
+                "_type" : "json",
+                "_comment" : ["visible parameters for Athena"],
+                "_multi_value" : true,
+                "_fields":{
+                    "GT_Percentage": {
+                        "_type" : "float"
+                    }, 
+                    "Minimal_Coverage":{
+                        "_type" : "integer"
+                    },
+                    "Ambiguous_percentage": {
+                        "_type" : "float"
+                    },
+                    "Minimal_Coverage_filter": {
+                        "_type" : "integer"
+                    },
+                    "Insertion_Size": {
+                        "_type" : "integer"
+                    },
+                    "Quality_threshold": {
+                        "_type" : "integer"
+                    },
+                    "Average_quality_of_a_read": {
+                        "_type" : "integer"
+                    },
+                    "Length_theshold": {
+                        "_type" : "integer"
+                    }
+                }
+            },
+            "io_domain" : {
+                "input_subdomain" : {
+                        "HCV1a_reference_genomes" :{
+                            "_type" : "uri",
+                            "_comment" : ["reference genomes"],
+                            "_multi_value" : true
+                            }
+                        },
+                        "subject": {
+                            "_type" : "json",
+                            "_comment" : [""],
+                            "_multi_value" : true,
+                            "_fields":{
+                                "name":{
+                                    "_type" : "string"
+                                },
+                                "URI": {
+                                    "_type" : "string"
+                                }
+                            }
+                        }
+                }
+            },
+            "error_domain": {
+                "empirical_error": {
+                    "_type" : "json",
+                    "_comment" : [""],
+                    "_optional" : true,
+                    "_fields":{
+                        "false negative alignment hits": {
+                            "_type" : "string"
+                        },
+                        "false discovery": {
+                            "_type" : "string"
+                        }
+                    }
+                },
+                "algorithmic_error": {
+                    "_type" : "json",
+                    "_comment" : [""],
+                    "_optional" : true,
+                    "_fields":{
+                        "false positive mutation calls discovery": {
+                            "_type" : "string"
+                        },
+                        "false_positive_mutation_calls_discovery": {
+                            "_type" : "string"
+                        },
+                        "false_discovery": {
+                            "_type" : "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

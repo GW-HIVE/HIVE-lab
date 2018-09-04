@@ -1,0 +1,198 @@
+{
+    "BioCompute_base_type": {
+        "_type": "type",
+        "_id": "$newid()",
+        "_inherit": "base_database_object",
+        "name": "BioCompute_base_type",
+        "title": "Base type for all BioCompute Objects",
+        "descr": "Provides the fields to instantiate a biocompute object. All BioComputes must inherit from this type in order to be compliant with BioCompute framework",
+
+        "_field": {
+            "id": {
+                "_type": "string",
+                "title": "Identifier of the object",
+                "_public": true,
+                "_write": false
+            },
+            "type_id": {
+                "_type": "string",
+                "title": "Identifier of the object type",
+                "_public": true,
+                "_write": false
+            },
+            "name": {
+                "_type": "string",
+                "title": "public searchable name for BioCompute Objects",
+                "_public": true
+            },
+            "structured_name": {
+                "_type": "string",
+                "title": "public searchable name for BioCompute Objects",
+                "_public": true,
+                "_vital": false
+            },
+            "version": {
+                "_type": "string",
+                "title": "version for BioCompute Object",
+                "_public": true
+            },
+            "createdby": {
+                "_type": "email",
+                "title": "email for user who created BioCompute Object",
+                "_public": true
+            },
+            "created": {
+                "_type": "datetime",
+                "title": "time of creation for BioCompute Object",
+                "_public": true
+            },
+            "modified": {
+                "_type": "datetime",
+                "title": "time of last change to BioCompute Object",
+                "_public": true
+            },
+            "digital_signature": {
+                "_type": "string",
+                "title": "digital signature of the BioCompute Object",
+                "_write": false,
+                "_vital": false
+            },
+            "verification_status": {
+                "_type": "string",
+                "_limit": {
+                    "choice ": ["in_progress", "unreviewed", "reviewed", "published", "rejected"] 
+                },
+                "title": "the current verification status of the BioCompute Object",
+                "_default": "unreviewed"
+            },
+            "publications_status": {
+                "_type": "string",
+                "_limit": {
+                    "choice ": ["draft", "in_progress", "private", "embargoed", "open_access"] 
+                },
+                "title": "the current publication status of the BioCompute Object",
+                "_default": "draft"
+            },
+            "authors": {
+                "_type": "core",
+                "name": {
+                    "_type": "string",
+                    "_hidden": "eval-js: orcid===undefined"
+                },
+                "orcid": {
+                    "_type": "string",
+                    "_hidden": "eval-js: name===undefined"
+                },
+                "_plural": true
+            },
+            "usability_domain": {
+                "_type": " string",
+                "_plural": true,
+                "descr": "text from biospec"  
+            },
+            "description domain": {
+                "keywords": {
+                    "_type": "keyval",
+                    "_plural": true,
+                    "vital": false
+                }, 
+                "xref": {
+                    "_type": "xref",
+                    "_plural": true,
+                    "vital": false
+                },
+                "pipeline_steps": {
+                    "tool_name": {
+                        "_type": "string",
+                        "descr": "this is a recognized name of the software tool" 
+                    },
+                    "tool_desc": {
+                       "_type": "text"
+                    },
+                    "tool_version": {
+                       "_type": "string"
+                    },
+                    "tool_package": {
+                       "_type": "string",
+                        "_plural": true
+                    },
+                    "step_number": {
+                       "_type": "uint",
+                        "_limit": {
+                            "eval-js": "$step_number >= 1"
+                        }
+                    },
+                    "input_uri_list": {
+                        "_type": "url",
+                       " _vital": false
+                    },
+                    "output_uri_list": {
+                        "_type": "url",
+                       " _vital": false
+                    },
+                    "_plural": true
+                },
+                "_vital": false
+            },
+            "execution_domain": {
+                "script_type": {
+                   "_type": "string",
+                    "_limit": {
+                        "choice": ["uri","text"]
+                    }
+                },
+                "script": {
+                   "_type": "$script_type"
+                },
+                "script_driver": {
+                   "_type": "string"
+                },
+                "pipeline_version": {
+                    "_type": "string"
+                },
+                "platform": {
+                    "_type": "string"
+                },
+                "software_prerequisites": {
+                    "name": {
+                        "_type": "string"
+                    }, 
+                    "version": {
+                        "_type": "string"
+                    },  
+                    "url": {
+                        "_type": "url",
+                        "_vital": false
+                    }, 
+                    "_plural": true
+                     
+                },
+                "access_prerequisites": {
+                    "name": {
+                        "_type": "string"
+                    }, 
+                    "url": {
+                        "_type": "url",
+                        "_plural": true
+                    }
+                },
+                "environmental_parameters": {
+                    "_type": "keyval",
+                    "_plural": true 
+                },
+                "_vital": true
+            },
+            "parametric_domain": {
+                "descr": "all fields in this domain should be defined in inheriting BioCompute subtypes"  
+            },
+            "io_domain": {
+                "input_subdomain": {
+                    "descr": "all fields in this subdomain are specific BioCompute specific and should be defined in inheriting BioCompute subtypes"  
+                },
+                "output_subdomain": {
+                    "descr": "all fields in this subdomain are specific BioCompute specific and should be defined in inheriting BioCompute subtypes"
+                }
+            }
+        }
+    }
+}

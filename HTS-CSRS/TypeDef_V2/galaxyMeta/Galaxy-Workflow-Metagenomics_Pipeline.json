@@ -1,0 +1,672 @@
+{
+	"uuid": "f1a3cc40-9b63-45cf-b300-e851ab59ac58",
+	"tags": [],
+	"format-version": "0.1",
+	"name": "Metagenomics Pipeline",
+	"steps": {
+		"0": {
+			"tool_id": null,
+			"tool_version": null,
+			"outputs": [],
+			"workflow_outputs": [],
+			"input_connections": {},
+			"tool_state": "{\"name\": \"forward_reads.fastq\"}",
+			"id": 0,
+			"uuid": "309def7e-fd04-4131-8011-452e07f3bb0c",
+			"errors": null,
+			"name": "Input dataset",
+			"label": "forward_reads.fastq",
+			"inputs": [
+				{
+					"name": "forward_reads.fastq",
+					"description": ""
+				}
+			],
+			"position": {
+				"top": 244,
+				"left": 200
+			},
+			"annotation": "",
+			"content_id": null,
+			"type": "data_input"
+		},
+		"1": {
+			"tool_id": null,
+			"tool_version": null,
+			"outputs": [
+
+			],
+			"workflow_outputs": [
+
+			],
+			"input_connections": {
+			},
+			"tool_state": "{\"name\": \"backward_reads.fastq\"}",
+			"id": 1,
+			"uuid": "8b5c6e5c-cdf5-47fc-906c-67fb94878784",
+			"errors": null,
+			"name": "Input dataset",
+			"label": "backward_reads.fastq",
+			"inputs": [
+				{
+					"name": "backward_reads.fastq",
+					"description": ""
+				}
+			],
+			"position": {
+				"top": 364,
+				"left": 200
+			},
+			"annotation": "",
+			"content_id": null,
+			"type": "data_input"
+		},
+		"2": {
+			"tool_id": "toolshed.g2.bx.psu.edu/repos/geert-vandeweyer/fastq_all_to_sanger/fastq_qual_convert/1.0.4",
+			"tool_version": "1.0.4",
+			"outputs": [
+				{
+					"type": "fastqsanger",
+					"name": "output_file"
+				}
+			],
+			"workflow_outputs": [
+
+			],
+			"input_connections": {
+				"input_file": {
+					"output_name": "output",
+					"id": 0
+				}
+			},
+			"tool_state": "{\"__page__\": null, \"input_type\": \"\\\"Auto\\\"\", \"__rerun_remap_job_id__\": null, \"chromInfo\": \"\\\"/software/galaxy/tool-data/shared/ucsc/chrom/?.len\\\"\", \"input_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}",
+			"id": 2,
+			"tool_shed_repository": {
+				"owner": "geert-vandeweyer",
+				"changeset_revision": "3990d6b37e2d",
+				"name": "fastq_all_to_sanger",
+				"tool_shed": "toolshed.g2.bx.psu.edu"
+			},
+			"uuid": "0bc61bd8-036d-4fb4-8a19-d34664b76655",
+			"errors": null,
+			"name": "FASTQ QualityConverter",
+			"post_job_actions": {
+				"HideDatasetActionoutput_file": {
+					"output_name": "output_file",
+					"action_type": "HideDatasetAction",
+					"action_arguments": {
+					}
+				}
+			},
+			"label": null,
+			"inputs": [
+				{
+					"name": "input_file",
+					"description": "runtime parameter for tool FASTQ QualityConverter"
+				}
+			],
+			"position": {
+				"top": 244,
+				"left": 420
+			},
+			"annotation": "",
+			"content_id": "toolshed.g2.bx.psu.edu/repos/geert-vandeweyer/fastq_all_to_sanger/fastq_qual_convert/1.0.4",
+			"type": "tool"
+		},
+		"3": {
+			"tool_id": "toolshed.g2.bx.psu.edu/repos/geert-vandeweyer/fastq_all_to_sanger/fastq_qual_convert/1.0.4",
+			"tool_version": "1.0.4",
+			"outputs": [
+				{
+					"type": "fastqsanger",
+					"name": "output_file"
+				}
+			],
+			"workflow_outputs": [
+
+			],
+			"input_connections": {
+				"input_file": {
+					"output_name": "output",
+					"id": 1
+				}
+			},
+			"tool_state": "{\"__page__\": null, \"input_type\": \"\\\"Auto\\\"\", \"__rerun_remap_job_id__\": null, \"chromInfo\": \"\\\"/software/galaxy/tool-data/shared/ucsc/chrom/?.len\\\"\", \"input_file\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}",
+			"id": 3,
+			"tool_shed_repository": {
+				"owner": "geert-vandeweyer",
+				"changeset_revision": "3990d6b37e2d",
+				"name": "fastq_all_to_sanger",
+				"tool_shed": "toolshed.g2.bx.psu.edu"
+			},
+			"uuid": "b3fca642-5207-40bc-b513-f11c50262f0d",
+			"errors": null,
+			"name": "FASTQ QualityConverter",
+			"post_job_actions": {
+				"HideDatasetActionoutput_file": {
+					"output_name": "output_file",
+					"action_type": "HideDatasetAction",
+					"action_arguments": {
+					}
+				}
+			},
+			"label": null,
+			"inputs": [
+				{
+					"name": "input_file",
+					"description": "runtime parameter for tool FASTQ QualityConverter"
+				}
+			],
+			"position": {
+				"top": 364,
+				"left": 420
+			},
+			"annotation": "",
+			"content_id": "toolshed.g2.bx.psu.edu/repos/geert-vandeweyer/fastq_all_to_sanger/fastq_qual_convert/1.0.4",
+			"type": "tool"
+		},
+		"4": {
+			"tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastq_paired_end_interlacer/fastq_paired_end_interlacer/1.2.0.1",
+			"tool_version": "1.2.0.1",
+			"outputs": [
+				{
+					"type": "input",
+					"name": "outfile_pairs"
+				},
+				{
+					"type": "input",
+					"name": "outfile_singles"
+				},
+				{
+					"type": "input",
+					"name": "outfile_pairs_from_coll"
+				},
+				{
+					"type": "input",
+					"name": "outfile_singles_from_coll"
+				}
+			],
+			"workflow_outputs": [],
+			"input_connections": {
+				"reads|input1_file": {
+					"output_name": "output_file",
+					"id": 2
+				},
+				"reads|input2_file": {
+					"output_name": "output_file",
+					"id": 3
+				}
+			},
+			"tool_state": "{\"__page__\": null, \"reads\": \"{\\\"input2_file\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"input1_file\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"__current_case__\\\": 0, \\\"reads_selector\\\": \\\"paired\\\"}\", \"chromInfo\": \"\\\"/software/galaxy/tool-data/shared/ucsc/chrom/?.len\\\"\", \"__rerun_remap_job_id__\": null}",
+			"id": 4,
+			"tool_shed_repository": {
+				"owner": "devteam",
+				"changeset_revision": "ef49268ee579",
+				"name": "fastq_paired_end_interlacer",
+				"tool_shed": "toolshed.g2.bx.psu.edu"
+			},
+			"uuid": "ff4a0dcc-d47d-4327-b23f-a8a4834a2eca",
+			"errors": null,
+			"name": "FASTQ interlacer",
+			"post_job_actions": {
+				"HideDatasetActionoutfile_singles_from_coll": {
+					"output_name": "outfile_singles_from_coll",
+					"action_type": "HideDatasetAction",
+					"action_arguments": {
+					}
+				},
+				"HideDatasetActionoutfile_singles": {
+					"output_name": "outfile_singles",
+					"action_type": "HideDatasetAction",
+					"action_arguments": {
+					}
+				},
+				"HideDatasetActionoutfile_pairs": {
+					"output_name": "outfile_pairs",
+					"action_type": "HideDatasetAction",
+					"action_arguments": {
+					}
+				},
+				"HideDatasetActionoutfile_pairs_from_coll": {
+					"output_name": "outfile_pairs_from_coll",
+					"action_type": "HideDatasetAction",
+					"action_arguments": {
+					}
+				}
+			},
+			"label": null,
+			"inputs": [
+				{
+					"name": "reads",
+					"description": "runtime parameter for tool FASTQ interlacer"
+				},
+				{
+					"name": "reads",
+					"description": "runtime parameter for tool FASTQ interlacer"
+				}
+			],
+			"position": {
+				"top": 244,
+				"left": 640
+			},
+			"annotation": "",
+			"content_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastq_paired_end_interlacer/fastq_paired_end_interlacer/1.2.0.1",
+			"type": "tool"
+		},
+		"5": {
+			"tool_id": "Censuscope",
+			"tool_version": "1.0",
+			"outputs": [
+				{
+					"type": "csv",
+					"name": "output"
+				}
+			],
+			"workflow_outputs": [
+
+			],
+			"input_connections": {
+				"input": {
+					"output_name": "outfile_pairs",
+					"id": 4
+				}
+			},
+			"tool_state": "{\"__page__\": null, \"__rerun_remap_job_id__\": null, \"tax\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"iter\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"sample\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"input\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}",
+			"id": 5,
+			"uuid": "4e6c6c60-68ba-4d27-b034-73798b2ff7c5",
+			"errors": null,
+			"name": "Censuscope",
+			"post_job_actions": {
+				"HideDatasetActionoutput": {
+					"output_name": "output",
+					"action_type": "HideDatasetAction",
+					"action_arguments": {
+					}
+				}
+			},
+			"label": null,
+			"inputs": [
+				{
+					"name": "sample",
+					"description": "runtime parameter for tool Censuscope"
+				},
+				{
+					"name": "input",
+					"description": "runtime parameter for tool Censuscope"
+				},
+				{
+					"name": "tax",
+					"description": "runtime parameter for tool Censuscope"
+				},
+				{
+					"name": "iter",
+					"description": "runtime parameter for tool Censuscope"
+				}
+			],
+			"position": {
+				"top": 244,
+				"left": 860
+			},
+			"annotation": "",
+			"content_id": "Censuscope",
+			"type": "tool"
+		},
+		"6": {
+			"tool_id": "dlrefgen_1",
+			"tool_version": "0.1.0",
+			"outputs": [
+				{
+					"type": "fasta",
+					"name": "output"
+				}
+			],
+			"workflow_outputs": [
+
+			],
+			"input_connections": {
+				"input": {
+					"output_name": "output",
+					"id": 5
+				}
+			},
+			"tool_state": "{\"input\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__rerun_remap_job_id__\": null, \"chromInfo\": \"\\\"/software/galaxy/tool-data/shared/ucsc/chrom/?.len\\\"\", \"__page__\": null}",
+			"id": 6,
+			"uuid": "ced3e781-0daa-4931-ad54-486c9106f60c",
+			"errors": null,
+			"name": "Download Censuscope Reference Genomes",
+			"post_job_actions": {
+				"HideDatasetActionoutput": {
+					"output_name": "output",
+					"action_type": "HideDatasetAction",
+					"action_arguments": {
+					}
+				}
+			},
+			"label": null,
+			"inputs": [
+				{
+					"name": "input",
+					"description": "runtime parameter for tool Download Censuscope Reference Genomes"
+				}
+			],
+			"position": {
+				"top": 244,
+				"left": 1080
+			},
+			"annotation": "",
+			"content_id": "dlrefgen_1",
+			"type": "tool"
+		},
+		"7": {
+			"tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/bowtie2/bowtie2/2.3.4.1",
+			"tool_version": "2.3.4.1",
+			"outputs": [
+				{
+					"type": "fastqsanger",
+					"name": "output_unaligned_reads_l"
+				},
+				{
+					"type": "fastqsanger",
+					"name": "output_aligned_reads_l"
+				},
+				{
+					"type": "fastqsanger",
+					"name": "output_aligned_reads_r"
+				},
+				{
+					"type": "fastqsanger",
+					"name": "output_unaligned_reads_r"
+				},
+				{
+					"type": "bam",
+					"name": "output"
+				},
+				{
+					"type": "sam",
+					"name": "output_sam"
+				},
+				{
+					"type": "txt",
+					"name": "mapping_stats"
+				}
+			],
+			"workflow_outputs": [],
+			"input_connections": {
+				"library|input_2": {
+					"output_name": "output_file",
+					"id": 3
+				},
+				"library|input_1": {
+					"output_name": "output_file",
+					"id": 2
+				},
+				"reference_genome|own_file": {
+					"output_name": "output",
+					"id": 6
+				}
+			},
+			"tool_state": "{\"__page__\": null, \"__rerun_remap_job_id__\": null, \"library\": \"{\\\"aligned_file\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"unaligned_file\\\": \\\"true\\\", \\\"input_2\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"__current_case__\\\": 1, \\\"input_1\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"type\\\": \\\"paired\\\", \\\"paired_options\\\": {\\\"no_mixed\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"dovetail\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"I\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"no_contain\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"no_discordant\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"no_overlap\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"__current_case__\\\": 0, \\\"X\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"fr_rf_ff\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"paired_options_selector\\\": \\\"yes\\\"}}\", \"reference_genome\": \"{\\\"source\\\": \\\"history\\\", \\\"__current_case__\\\": 1, \\\"own_file\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}}\", \"rg\": \"{\\\"rg_selector\\\": \\\"do_not_set\\\", \\\"__current_case__\\\": 3}\", \"save_mapping_stats\": \"\\\"true\\\"\", \"analysis_type\": \"{\\\"analysis_type_selector\\\": \\\"simple\\\", \\\"presets\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"__current_case__\\\": 0}\"}",
+			"id": 7,
+			"tool_shed_repository": {
+				"owner": "devteam",
+				"changeset_revision": "3ba8d4563129",
+				"name": "bowtie2",
+				"tool_shed": "toolshed.g2.bx.psu.edu"
+			},
+			"uuid": "a7d283db-29f6-4ab7-8052-0e44b879b859",
+			"errors": null,
+			"name": "Bowtie2",
+			"post_job_actions": {
+				"HideDatasetActionoutput_unaligned_reads_r": {
+					"output_name": "output_unaligned_reads_r",
+					"action_type": "HideDatasetAction",
+					"action_arguments": {
+					}
+				},
+				"HideDatasetActionoutput": {
+					"output_name": "output",
+					"action_type": "HideDatasetAction",
+					"action_arguments": {
+					}
+				},
+				"HideDatasetActionoutput_aligned_reads_l": {
+					"output_name": "output_aligned_reads_l",
+					"action_type": "HideDatasetAction",
+					"action_arguments": {
+					}
+				},
+				"HideDatasetActionmapping_stats": {
+					"output_name": "mapping_stats",
+					"action_type": "HideDatasetAction",
+					"action_arguments": {
+					}
+				},
+				"HideDatasetActionoutput_aligned_reads_r": {
+					"output_name": "output_aligned_reads_r",
+					"action_type": "HideDatasetAction",
+					"action_arguments": {
+					}
+				},
+				"HideDatasetActionoutput_sam": {
+					"output_name": "output_sam",
+					"action_type": "HideDatasetAction",
+					"action_arguments": {
+					}
+				},
+				"HideDatasetActionoutput_unaligned_reads_l": {
+					"output_name": "output_unaligned_reads_l",
+					"action_type": "HideDatasetAction",
+					"action_arguments": {
+					}
+				}
+			},
+			"label": null,
+			"inputs": [
+				{
+					"name": "analysis_type",
+					"description": "runtime parameter for tool Bowtie2"
+				},
+				{
+					"name": "reference_genome",
+					"description": "runtime parameter for tool Bowtie2"
+				},
+				{
+					"name": "library",
+					"description": "runtime parameter for tool Bowtie2"
+				},
+				{
+					"name": "library",
+					"description": "runtime parameter for tool Bowtie2"
+				},
+				{
+					"name": "library",
+					"description": "runtime parameter for tool Bowtie2"
+				}
+			],
+			"position": {
+				"top": 218,
+				"left": 1384
+			},
+			"annotation": "",
+			"content_id": "toolshed.g2.bx.psu.edu/repos/devteam/bowtie2/bowtie2/2.3.4.1",
+			"type": "tool"
+		},
+		"8": {
+			"tool_id": "fq2fa_1",
+			"tool_version": "0.1.0",
+			"outputs": [
+				{
+					"type": "fasta",
+					"name": "output"
+				}
+			],
+			"workflow_outputs": [],
+			"input_connections": {
+				"input2": {
+					"output_name": "output_unaligned_reads_r",
+					"id": 7
+				},
+				"input1": {
+					"output_name": "output_unaligned_reads_l",
+					"id": 7
+				}
+			},
+			"tool_state": "{\"input2\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"input1\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"chromInfo\": \"\\\"/software/galaxy/tool-data/shared/ucsc/chrom/?.len\\\"\"}",
+			"id": 8,
+			"uuid": "797c16cd-abe7-4212-acd7-969161093557",
+			"errors": null,
+			"name": "Paired Fastq to Fasta",
+			"post_job_actions": {
+				"HideDatasetActionoutput": {
+					"output_name": "output",
+					"action_type": "HideDatasetAction",
+					"action_arguments": {
+					}
+				}
+			},
+			"label": null,
+			"inputs": [
+				{
+					"name": "input2",
+					"description": "runtime parameter for tool Paired Fastq to Fasta"
+				},
+				{
+					"name": "input1",
+					"description": "runtime parameter for tool Paired Fastq to Fasta"
+				}
+			],
+			"position": {
+				"top": 220,
+				"left": 1771
+			},
+			"annotation": "",
+			"content_id": "fq2fa_1",
+			"type": "tool"
+		},
+		"9": {
+			"tool_id": "idba_ud_galaxy",
+			"tool_version": "1.1.1 (Oct 18, 2012)",
+			"outputs": [
+				{
+					"type": "fasta",
+					"name": "output"
+				}
+			],
+			"workflow_outputs": [
+				{
+					"output_name": "output",
+					"uuid": "392b1b20-c34c-4deb-bfce-42f60afca536",
+					"label": null
+				}
+			],
+			"input_connections": {
+				"read": {
+					"output_name": "output",
+					"id": 8
+				}
+			},
+			"tool_state": "{\"mink\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"long_read\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"max_mismatch\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"seed_kmer\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"min_pairs\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"maxk\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"other\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"inner_step\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"min_contig\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"read\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"step\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"min_count\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"read_level_4\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"read_level_5\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"read_level_2\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"read_level_3\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"inner_mink\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"num_threads\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"prefix\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"similar\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"min_support\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}",
+			"id": 9,
+			"uuid": "35b0ff10-32b7-4df5-8384-df08a459e916",
+			"errors": null,
+			"name": "myidba_ud",
+			"post_job_actions": {},
+			"label": null,
+			"inputs": [
+				{
+					"name": "num_threads",
+					"description": "runtime parameter for tool myidba_ud"
+				},
+				{
+					"name": "prefix",
+					"description": "runtime parameter for tool myidba_ud"
+				},
+				{
+					"name": "mink",
+					"description": "runtime parameter for tool myidba_ud"
+				},
+				{
+					"name": "long_read",
+					"description": "runtime parameter for tool myidba_ud"
+				},
+				{
+					"name": "maxk",
+					"description": "runtime parameter for tool myidba_ud"
+				},
+				{
+					"name": "read",
+					"description": "runtime parameter for tool myidba_ud"
+				},
+				{
+					"name": "similar",
+					"description": "runtime parameter for tool myidba_ud"
+				},
+				{
+					"name": "step",
+					"description": "runtime parameter for tool myidba_ud"
+				},
+				{
+					"name": "min_pairs",
+					"description": "runtime parameter for tool myidba_ud"
+				},
+				{
+					"name": "max_mismatch",
+					"description": "runtime parameter for tool myidba_ud"
+				},
+				{
+					"name": "seed_kmer",
+					"description": "runtime parameter for tool myidba_ud"
+				},
+				{
+					"name": "other",
+					"description": "runtime parameter for tool myidba_ud"
+				},
+				{
+					"name": "inner_mink",
+					"description": "runtime parameter for tool myidba_ud"
+				},
+				{
+					"name": "inner_step",
+					"description": "runtime parameter for tool myidba_ud"
+				},
+				{
+					"name": "min_count",
+					"description": "runtime parameter for tool myidba_ud"
+				},
+				{
+					"name": "read_level_4",
+					"description": "runtime parameter for tool myidba_ud"
+				},
+				{
+					"name": "read_level_5",
+					"description": "runtime parameter for tool myidba_ud"
+				},
+				{
+					"name": "read_level_2",
+					"description": "runtime parameter for tool myidba_ud"
+				},
+				{
+					"name": "min_contig",
+					"description": "runtime parameter for tool myidba_ud"
+				},
+				{
+					"name": "read_level_3",
+					"description": "runtime parameter for tool myidba_ud"
+				},
+				{
+					"name": "min_support",
+					"description": "runtime parameter for tool myidba_ud"
+				}
+			],
+			"position": {
+				"top": 211,
+				"left": 2046.5
+			},
+			"annotation": "",
+			"content_id": "idba_ud_galaxy",
+			"type": "tool"
+		}
+	},
+	"annotation": "",
+	"a_galaxy_workflow": "true"
+}

@@ -1,0 +1,269 @@
+{
+    "name" : "BioCompute_base_type",
+    "title" : "Base type for all BioCompute Object types",
+    "description" : "All BioCompute object types must inherit from this type in order to be compliant with BioCompute framework",
+    "_comment" : [
+        "Since JSON format do not allow comments '_comment' key is used for commments and should be ignored by parsers",
+        "As any object of type 'type' it has its on fields: _type, _id, _inhertis, name, title and descritption",
+        "As base type this type inherits from none",
+        "Identifier of the object since type itself is an object",
+        "Type os this JSON object is 'type'",
+        "For each field default value for '_multi_value' key is 'false' and '_optional' is 'true'"
+    ],
+    "_fields" : {
+        "_comment" : "List of fields of the BioCompute Object type",
+        "name" : {
+            "_type" :"string",
+            "_title" : "Public searchable name for BioCompute Object",
+            "_optional" : false
+        },
+        "structured_name" : {
+            "_type" :"string",
+            "_title" : "Name of the BioCompute in accordance to guidelines",
+            "_comment" : "??? Raja will put pointers into naming guidance"
+        },
+        "version" : {
+            "_type" :"version",
+            "_title" : "version of the BioCompute Object"
+        },
+        "digital_signature" : {
+            "_type" : "blob",
+            "_title" : "Digital signature of BioCompute Object by Authority",
+            "_read_only" : true
+        },
+        "review" : {
+            "_multi_value" : true,
+            "status" : {
+                "_type" : "string",
+                "_constraint" : {
+                    "_choice" : [ "unreviewed", "in-review", "approved", "rejected", "suspended" ]
+                },
+                "_title" : "Current verification status of the BioCompute Object",
+                "_default_value" : "unreviewed"
+            },
+            "reviewer" : { 
+                "_type": "author"
+            },
+            "comment" : {
+                "_type" : "string",
+                "_optional" : true
+            },
+            "_optional" : true
+        },
+        "derived_from" : {
+            "parent_bco": {
+                "_type": "objid",
+                "_optional" : true
+            }
+        },
+        "obsolete" : {
+            "_type": "datetime" , 
+            "_optional" : true
+        },
+        "embargo" : {
+            "start_time" : { 
+                "_type" : "datetime", 
+                "_optional" : true
+            },
+            "end_time" : { 
+                "_type" : "datetime", 
+                "_optional" : true
+            }
+        },
+        "created" : {
+            "_type" :"datetime",
+            "_title" : "Date and time of the BioCompute Object creation",
+            "_read_only" : true
+        },
+        "modified" : {
+            "_type" :"datetime",
+            "_title" : "Date and time of the BioCompute Object was last modified",
+            "_read_only" : true
+        },
+        "authors" : {
+            "_type" : "author",
+            "_multi_value" : true
+        },
+        "usability_domain" : {
+            "_type" : "string",
+            "_title" : "Text from biospec",
+            "_multi_value" : true
+        },
+        "description domain" : {
+            "keywords" : {
+                "_type" : "keymap",
+                "_multi_value" : true
+            },
+            "xref" : {
+                "_type" : "xref",
+                "_multi_value" : true
+            },
+            "pipeline_steps" : {
+                "_layout": "array",
+                "tool" : { 
+                    "_multi_value" : true,
+                    "name" : {
+                        "_type" : "string",
+                        "_description" : "this is a recognized name of the software tool" 
+                    },
+                    "description" : {
+                       "_type" : "text"
+                    },
+					"step_number": {
+						"_type": "integer"
+					},
+                    "version" : {
+                       "_type" : "version"
+                    },
+                    "prerequisite" : {
+                       "_type" : "string",
+					   "_description" : "reference or required prereqs",
+                        "_multi_value" : true
+                    },
+                    "input_list" : {
+                        "_type" : "url",
+                        "_multi_value" : true
+                    },
+                    "output_list" : {
+                        "_type" : "url",
+                        "_multi_value" : true
+                    }
+                },
+			    "pipeline_steps_example" : {
+			        "tool": [
+			           { 
+			                "name": "hexagon tool",
+			                "description": "this tool does alignment",
+			                "version" : "1.2",
+							"step_number": "1",
+			                "prerequisites" : [
+			                      "http://ncbi.nlm.nih.gov/gb/ABC123",
+			                      "http://ncbi.nlm.nih.gov/gb/ABC122"
+			                ],
+			                "input_uri_list": [
+			                    "hive://data/514769/dnaAccessionBased.csv"
+			                ],
+			                "output_uri_list": [
+			                    "hive://data/514801/SNPProfile.csv",
+			                    "hive://data/14769/allCount-aligned.csv"
+			                ]
+			            }
+			        ]
+			    }
+            }
+        },
+        "execution_domain" : {
+            "_optional" : false,
+            "script_type" : {
+               "_type" :"string",
+                "_constraint" : {
+                    "_choice" : [ "url", "text" ]
+                }
+            },
+            "script" : {
+               "_type" : "string"
+            },
+            "script_driver" : {
+               "_type" : "string"
+            },
+            "pipeline_version" : {
+                "_type" : "version"
+            },
+            "platform" : {
+                "_type" : "string"
+            },
+            "software_prerequisites" : {
+                "_multi_value" : true,
+                "name" : {
+                    "_type" : "string"
+                }, 
+                "version" : {
+                    "_type" : "version"
+                },  
+                "url" : {
+                    "_type" : "url"
+                }
+            },
+            "domain_prerequisites" : {
+                "_multi_value" : true,
+                "name" : {
+                    "_type" : "string"
+                }, 
+                "url" : {
+                    "_type" : "url",
+                    "_multi_value" : true
+                }
+            },
+            "environmental_parameters" : {
+                "_type" : "keyval",
+                "_multi_value" : true
+            }
+        },
+        "parametric_domain" : {
+            "_type" : "json",
+            "_comment" : "all fields in this domain should be defined in inheriting BioCompute subtypes",
+		    "parametric_domain_examples": [
+		        {
+			        "name": "maxMissQueryPercent",
+			        "_type" : "integer"
+		        },
+		        {
+			        "name": "keepAllMatches",
+			        "_type" : "integer",
+			        "_default": 1,
+			        "_constraint": {
+			            "_choice": [
+			                {
+			                    "value": 0,
+			                    "title": "First Match"
+			                },
+			                {
+			                    "value": 1,
+			                    "title": "Best first match"
+			                }
+			            ]
+			        }
+			    },
+		        {
+		            "name": "seed",
+					"_type" : "integer",
+		            "_constraint" : {
+		                "eval-js": "$seed>3"
+		            }
+		        }
+			]
+        },
+        "io_domain" : {
+            "input_subdomain" : {
+                "_type" : "json",
+                "_comment" : "all fields in this domain are BioCompute specific and should be defined in inherited BioCompute type",
+                "input_subdomain_example" : {
+                    "query" : { 
+                        "_type": "uri",
+                        "name": "short reads",
+                        "_multi_value": true
+                    },
+                    "subject" :{
+                        "_type": "uri",
+                        "_multi_value": true,
+                        "name": "refernce sequences"
+                    }
+                }
+            },
+            "output_subdomain" : {
+                "_type" : "json",
+                "_comment" : "all fields in this domain are BioCompute specific and should be defined in inherited BioCompute type",
+                "output_subdomain_example": {
+                        "hitlist": {
+                            "uri":"http://hive.....cmd=alHitList",
+                            "mime":"csv"
+                        },
+                        "alignment": {
+                            "uri":"efwwfwfwfwfewewf",
+                            "mime": "text/SAM"
+                        }
+                }
+            }
+        }
+    }
+}

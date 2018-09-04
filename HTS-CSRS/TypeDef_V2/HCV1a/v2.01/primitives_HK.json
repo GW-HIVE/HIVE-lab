@@ -1,0 +1,124 @@
+{
+    "primitives" : {
+        "_comment": "primitive type hash with short descriptions",
+        "_type" : {
+            "string": "alphanumeric string",
+            "integer": "integer number",
+            "real": "floting point number", 
+            "bool": "can only be assigned true, false, or null",
+            "date": "specified ISO - 8601", 
+            "time": "ISO - 8601", 
+            "datetime": "ISO - 8601",
+            "uri": "schema://domain/resource_locator", 
+            "objectid": "[schema://domain/]1231231",
+            "password": "****",
+            "version": "string : suggestion major[.minor[.build_nunber]]", 
+            "type": "string",
+            "email": "string/@/string",
+            "blob": "binary data stored as a single object"
+        }
+    },
+    "keyval" : {
+        "key" : {
+            "_type" : "string"
+        },
+        "value" : {
+            "_type" : "string"
+        }
+    },
+    "keymap" : {
+        "key" : {
+            "_type" : "string"
+        },
+        "value" : {
+            "_type" : "string",
+            "_plural" : true
+        }
+    },
+    "uri": {
+        "address": {
+            "_type": "string" 
+        },
+        "access_time": {
+            "_type" : "datetime"
+        }
+    },
+    "file": {
+        "uri" : {
+            "_type" : "uri"
+        },
+        "mime": { 
+            "_type" : "string",
+            "_optional" : true
+        }
+    },
+    "xref" : {
+        "db" : {
+            "_type" : "string",
+            "_comment" : "can be a prefix in identifiers.org or a db named in a source" 
+        },
+        "id" : {
+            "_type" : "string"
+        },
+        "source" : {
+			"_comment": "This can be the common name for the db",
+            "_type" : "string",
+            "_optional" :true
+        },
+        "access_time":{
+            "_type": "datetime",
+            "_optional" : true
+        },
+        "xref_examples": [
+            {
+                "source": "NCBI",
+                "db": "nucleotide",
+                "id": "BA000005.3", 
+				"access_time": "Fri Mar  2 15:16:58 EST 2018"
+            },
+            { 
+                    "db": "pubchem.compound",
+                    "id": 2519
+            }
+        ]
+    },
+    "author": {
+        "type" : {
+            "_type" : "string",
+            "_constraint" :{
+                "_choice" : ["orcid", "entity"]
+            },
+	        "orcid": {
+	            "_type": "string"
+	        },
+	        "entity": {
+	            "name": {
+	                "_type": "string",
+	                "_optional" : true
+	            },
+	            "affiliation": {
+	                "_type": "string",
+	                "_optional" : true
+	            },
+	            "email" : {
+	                "_type" : "email",
+	                "_optional" : true
+	            }
+			}
+        },
+	    "author_examples": [
+	        {
+	            "type": "orcid", 
+	            "orcid": 123132
+	        },
+	        {
+	            "type": "entity", 
+	            "entity" : { 
+	                "name": "Darth Vader",
+	                "affiliation": "StarWars Pharmaceutical", 
+	                "email": "koko@deathstar.com"
+	            }
+	        }
+	    ]
+	}
+}

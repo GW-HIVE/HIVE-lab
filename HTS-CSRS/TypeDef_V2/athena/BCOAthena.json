@@ -1,0 +1,1283 @@
+{
+    "object_id": 1270, 
+    "type_id": 361,
+    "provenance_domain":{
+        "name": "HCV1 HCV3, Grazoprevir(+), Uprifosbuvir(+), Ruzasvir resistance sequence alteration detection",
+        "structured_name": "HCV1 HCV3 [HCV1a:taxID:31646],[HCV3a:taxID:356114] Grazoprevir(+), Uprifosbuvir(+), Ruzasvir [PubChem:126961390] resistance sequence alteration detection [SO:0001059]",
+        "version": "1.0",
+        "digital_signature":"izUq7386L9l77KBw2FS9gnhcMgxdrHw0",
+        "review": [
+            {
+                "status": "approved",
+                "comment": "Approved by GW staff. Waiting for approval from FDA Reviewer",
+                "reviewer": {
+                    "type": "orcid",
+                    "orcid": {
+                        "orc_id": "https://orcid.org/0000-0003-1409-4549",
+                        "contribution": "curatedBy"
+                    }
+                }
+            },
+            {
+                "status": "in-review",
+                "comment": "...",
+                "reviewer": {
+                    "type": "entity", 
+                    "entity": { 
+                        "name": "Nuria Guimera", 
+                        "affiliation": "DDL", 
+                        "email": "nuria.guimera@ddl.nl",
+                        "contribution": "authoredBy"
+                    }
+                }
+            },
+            {
+                "status": "in-review",
+                "comment": "...",
+                "reviewer": {
+                    "type": "entity", 
+                    "entity": { 
+                        "name": "Jian Chao Yao", 
+                        "affiliation": "Merck", 
+                        "email": "jianchao.yao@merck.com",
+                        "contribution": "contributedBy"
+                    }
+                }
+            }
+        ],
+        "derived_from" : null,
+        "obsolete" : null,
+        "embargo" : {
+            "start_time": null,
+            "end_time": null
+        },
+        "createdby": "souvik.das@ddl.nl",
+        "created": "2018-03-07T16:31:17+0100",
+        "modified": "22018-06-12T13:48:17-0400",
+        "contributors": [
+            {
+                "type": "entity", 
+                "entity": { 
+                    "name": "Joachim Boers", 
+                    "affiliation": "DDL", 
+                    "email": "...",
+                    "contribution": "contributedBy"
+                }
+            },
+            {
+                "type": "entity", 
+                "entity": { 
+                    "name": "Yuching Lai", 
+                    "affiliation": "DDL", 
+                    "email": "yuching.lai@gmail.com",
+                    "contribution": "authoredBy"
+                }
+            },
+            {
+                "type": "entity", 
+                "entity": { 
+                    "name": "Souvik Das", 
+                    "affiliation": "DDL", 
+                    "email": "souvik.das@ddl.nl",
+                    "contribution": "authoredBy"
+                }
+            },
+            {
+                "type": "entity", 
+                "entity": { 
+                    "name": "Nuria Guimera", 
+                    "affiliation": "DDL", 
+                    "email": "nuria.guimera@ddl.nl",
+                    "contribution": "authoredBy"
+                }
+            }
+        ],
+        "license":{
+            "address": "https://creativecommons.org/licenses/by/4.0/",
+            "access_time": "2018-06-12T13:48:17-0400"
+        }
+    },
+    "usability_domain":[
+        "Efficacy and Safety of Grazoprevir (+) Uprifosbuvir (+) Ruzasvir (MK-3682B) (MK-5172 + MK-3682 + MK-8408) Fixed Dose Combination in Chronic HCV Participants Failing Prior Antiviral Treatment (MK-3682-021)",
+        "This is a randomized, multicenter, 2-part, open-label trial of the combination regimen of grazoprevir (GZR [MK-5172]; 100mg), uprifosbuvir (UPR [MK-3682]; 450 mg) and ruzasvir (RZR [MK-8408]; 60 mg) with and without Ribavirin (RBV) in cirrhotic (C) or non-cirrhotic (NC) participants infected with hepatitis C virus (HCV) previously failing a direct-acting antiviral regimen (DAA). The combination regimen, referred to as MK-3682B, will be administered as two fixed-dose combination (FDC) tablets, given once-daily. The study will evaluate the efficacy of MK-3682B with or without RBV as assessed by the proportion of participants achieving Sustained Virologic Response 12 weeks (SVR12) after the end of all study therapy.",
+        "URI: https://clinicaltrials.gov/ct2/show/NCT02613403?term=MK-3682B&cond=HCV&rank=1"
+   ],
+    
+    "description_domain":{
+        "keywords":[
+            {
+                "key": "search terms",
+                "value": [
+                    "HCV",
+                    "HCV1a",
+                    "HCV3a",
+                    "Variant calling",
+                    "Amino acid substitutions",
+                    "Amino acid",
+                    "Grazoprevir (+) Uprifosbuvir (+) Ruzasvir (MK-3682B) (MK-5172 + MK-3682 + MK-8408)",
+                    "Merck Sharp & Dohme Corp."
+                ]
+            }
+        ],
+        "xref":[
+            {
+                "source": "so",
+                "db": "Sequence Ontology",
+                "ids":["SO:1000002", "SO:0000667", "SO:0000045", "SO:0000730"],
+                "access_time": "2018-03-07T16:31:17+0100"
+            },
+            {
+                "source": "pubchem.compound",
+                "db": "PubChem-compound",
+                "ids": ["126961390"], 
+                "access_time": "2018-03-07T16:31:17+0100"
+            },
+            {
+                "source": "pubmed",
+                "db": "PubMed",
+                "ids": ["28688129"], 
+                "access_time": "2018-03-07T16:31:17+0100"
+            },
+            {
+                "source": "taxonomy",
+                "db": "Taxonomy",
+                "ids": ["31646", "356114"], 
+                "access_time": "2018-03-07T16:31:17+0100"
+            }
+        ],
+        "pipeline_steps":{
+            "tool":[
+                {
+                    "step_number": "1",
+                    "name": "Athena-Reference Selection",
+                    "description": "Genotyping is performed to determine the pathogen genotype-subtype in a sample and to select the best reference to be used during the first mapping step. This is needed for a proper reference-based variant calling. Reads are assigned to the different genotype-subtype reference sequences, thus enabling to calculate the number of reads that got mapped to the selected reference sequences.",
+                    "version": "3.0",
+                    "prerequisite":[
+                        {
+                            "name": "HCV genotype reference sequences: multi fasta",
+                            "URI": "T:/NGS_Analytics/Bio_Data/GT_Ref/"
+                        },
+                        {
+                            "name": "Genotyping Bowtie-2 indices",
+                            "URI":"T:/NGS_Analytics/Bio_Data/GT_Ref/"
+                        },
+                        {
+                            "name": "Sample FASTQ Files",
+                            "URI": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/FASTQ/"
+                        }
+                    ],
+                    "input_uri_list":[
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/UDS-SEQ0000_P000M0000_S5_L001_R1_001.fastq",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/UDS-SEQ0000_P000M0000_S5_L001_R2_001.fastq",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        }
+                    ],
+                    "output_uri_list":[
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/GT_18-05-2016_15-13-03/GT_18-05-2016_15-11-22.log",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "Genotyping result stored in SQL database-Hercules table-GT_P using several INSERT queries.",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        }
+                    ]
+                },
+                {
+                    "step_number": "2",
+                    "name": "Athena-First Mapping ",
+                    "description": "In this step the reads from FASTQ files are aligned/mapped to the selected reference by Bowtie2 software tool determined from the reference selection step (Step 1)",
+                    "tool_version": "3.0",
+                    "tool_package": "Athena",
+                    "prerequisite":[
+                            {
+                                "name": "HCV reference sequences: individual fasta files",
+                                "URI": "T:/NGS_Analytics/Bio_Data/Athena/Ref_fa"
+                            },
+                            {
+                                "name": "Mapping Bowtie-2 indices",
+                                "URI": "T:/NGS_Analytics/Bio_Data/Athena/BowtieIndex/"
+                            },
+                            {
+                                "name": "Sample FASTQ Files",
+                                "URI": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/FASTQ/"
+                            }
+                    ],
+                    "input_uri_list":[
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1d_KJ439768.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1e_KJ439769.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1i_KJ439772.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1l_KC248193.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1n_KJ439775.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1g_AM910652.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1b_AJ238799.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1k_KJ439774.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1j_KJ439773.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1c_D14853.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1h_KC248198.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1m_KJ439778.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1a_NC004102.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3_GU814263.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3b_D49374.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3d_KJ470619.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3e_KJ470618.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3h_JF735121.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3i_FJ407092.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3g_JX227954.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3k_D63821.fa",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1a.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1a.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1a.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1a.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1a.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1a.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1b.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1b.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1b.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1b.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1b.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1b.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1c.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1c.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1c.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1c.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1c.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1c.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1d.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1d.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1d.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1d.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1d.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1d.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1e.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1e.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1e.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1e.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1e.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1e.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1g.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1g.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1g.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1g.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1g.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1g.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1h.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1h.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1h.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1h.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1h.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1h.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1i.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1i.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1i.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1i.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1i.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1i.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1j.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1j.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1j.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1j.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1j.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1j.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1k.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1k.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1k.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1k.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1k.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1k.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1l.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1l.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1l.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1l.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1l.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1l.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1m.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1m.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1m.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1m.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1m.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1m.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1n.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1n.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1n.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1n.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1n.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_1n.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3b.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3b.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3b.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3b.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3b.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3b.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3d.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3d.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3d.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3d.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3d.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3d.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3e.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3e.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3e.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3e.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3e.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3e.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3g.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3g.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3g.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3g.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3g.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3g.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3h.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3h.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3h.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3h.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3h.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3h.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3i.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3i.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3i.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3i.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3i.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3i.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3k.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3k.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3k.3.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3k.4.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3k.rev.1.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/HCV_3k.rev.2.bt2",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/UDS-SEQ0000_P000M0001_S5_L001_R1_001.fastq",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/UDS-SEQ0000_P000M0001_S5_L001_R2_001.fastq",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        }
+                    ],
+                    "output_uri_list":[
+                        "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S8_1a.sam",
+                        "Mapping statistics stored in SQL database-Hercules table-Athena using several INSERT queries.",
+                        "A log file is generated storing all the vital information corresponding to ongoing analysis."
+                    ]
+                },
+				{}
+            ]
+        }
+	},
+    "extension_domain":{},
+    "execution_domain": {
+        "script_type": "url",
+        "script": "T:/NGS_Analytics_live/Software/Analysis/Pipelines/",
+        "script_driver": "shell",
+        "pipeline_version": "3.0",
+        "platform": "Athena NGS Analytics",
+        "software_prerequisites": [
+            {
+                "name":"python",
+                "version":"2.6.6",
+                "uri": {
+                    "address": "https://www.python.org/download/releases/2.6.6/",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                }
+            },
+            {
+                "name":"bowtie 2",
+                "version":"2.2.2",
+                "uri": {
+                    "address": "https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.2.2/",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                }
+            },
+            {
+                "name":"pyodbc",
+                "version":"3.0.10",
+                "uri": {
+                    "address": "https://pypi.python.org/pypi/pyodbc/3.0.10",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                }
+            },
+            {
+                "name":"numpy",
+                "verson":"1.7.1",
+                "uri": {
+                    "address": "https://pypi.python.org/pypi/numpy/1.7.1",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                }
+            },
+            {
+                "name":"matplotlib",
+                "version":"1.2.0",
+                "uri": {
+                    "address": "https://pypi.python.org/pypi/matplotlib/1.2.0",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                }
+            }
+        ],
+        "domain_prerequisites": [
+            {
+                "name": "access to ftp", 
+                "url": "ftp://:22/"
+            }, 
+            {
+                "name": "access to e-utils", 
+                "url": "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
+            }
+        ], 
+    "env_parameters": [
+        {
+            "package": "NGS_Analytics_live"
+        }
+    ]
+    },
+    "parametric_domain": {
+        "GT_Percentage": "0.1", 
+        "Minimal_Coverage": "5000",
+        "Ambiguous_percentage": "0.15",
+        "Minimal_Coverage_filter": "500",
+        "Insertion_Size": "100",
+        "Quality_threshold": "20",
+        "Average_quality_of_a_read": "20",
+        "Length_theshold": "50"
+    },
+    "io_domain": {
+        "input_subdomain": {
+            "HCV1a_reference_genomes": [
+                {
+                    "address": "https://www.ncbi.nlm.nih.gov/nuccore/KJ439768.fa",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                },
+                {
+                    "address": "https://www.ncbi.nlm.nih.gov/nuccore/KJ439769.fa",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                },
+                {
+                    "address": "https://www.ncbi.nlm.nih.gov/nuccore/KJ439772.fa",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                },
+                {
+                    "address": "https://www.ncbi.nlm.nih.gov/nuccore/KC248193.fa",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                },
+                {
+                    "address": "https://www.ncbi.nlm.nih.gov/nuccore/KJ439775.fa",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                },
+                {
+                    "address": "https://www.ncbi.nlm.nih.gov/nuccore/AM910652.fa",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                },
+                {
+                    "address": "https://www.ncbi.nlm.nih.gov/nuccore/AJ238799.fa",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                },
+                {
+                    "address": "https://www.ncbi.nlm.nih.gov/nuccore/KJ439774.fa",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                },
+                {
+                    "address": "https://www.ncbi.nlm.nih.gov/nuccore/KJ439773.fa",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                },
+                {
+                    "address": "https://www.ncbi.nlm.nih.gov/nuccore/D14853.fa",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                },
+                {
+                    "address": "https://www.ncbi.nlm.nih.gov/nuccore/KC248198.fa",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                },
+                {
+                    "address": "https://www.ncbi.nlm.nih.gov/nuccore/KJ439778.fa",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                },
+                {
+                    "address": "https://www.ncbi.nlm.nih.gov/nuccore/NC004102",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                },
+                {
+                    "address": "HCV3a_reference_genome",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                },
+                {
+                    "address": "https://www.ncbi.nlm.nih.gov/nuccore/GU814263.fa",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                },
+                {
+                    "address": "https://www.ncbi.nlm.nih.gov/nuccore/D49374.fa",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                },
+                {
+                    "address": "https://www.ncbi.nlm.nih.gov/nuccore/KJ470619.fa",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                },
+                {
+                    "address": "https://www.ncbi.nlm.nih.gov/nuccore/KJ470618.fa",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                },
+                {
+                    "address": "https://www.ncbi.nlm.nih.gov/nuccore/JF735121.fa",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                },
+                {
+                    "address": "https://www.ncbi.nlm.nih.gov/nuccore/FJ407092.fa",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                },
+                {
+                    "address": "https://www.ncbi.nlm.nih.gov/nuccore/JX227954.fa",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                },
+                {
+                    "address": "https://www.ncbi.nlm.nih.gov/nuccore/D63821.fa",
+                    "access_time": "2018-03-07T16:31:17+0100"
+                }
+            ]
+        },
+    "input_uri_list": [           
+        "reference_files":[
+            {"name": "HCV genotype reference sequences: multi fasta",
+             "URI": "T:/NGS_Analytics/Bio_Data/GT_Ref/"},
+            {"name": "Genotyping Bowtie-2 indices",
+             "URI":"T:/NGS_Analytics/Bio_Data/GT_Ref/"},
+            {"name": "HCV reference sequences: individual fasta files",
+             "URI": "T:/NGS_Analytics/Bio_Data/Athena/Ref_fa/"},
+            {"name": "Mapping Bowtie-2 indices",
+             "URI": "T:/NGS_Analytics/Bio_Data/Athena/BowtieIndex/"}
+              {"name": "Sample FASTQ Files",
+             "URI": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/FASTQ/"},
+       ]
+     ],
+        "input_files":[
+            "HCV.fa",
+            "HCV.1.bt2",
+            "HCV.2.bt2",
+            "HCV.3.bt2",
+            "HCV.4.bt2",
+            "HCV.rev.1.bt2",
+            "HCV.rev.2.bt2",
+            "HCV_1d_KJ439768.fa",
+            "HCV_1e_KJ439769.fa",
+            "HCV_1i_KJ439772.fa",
+            "HCV_1l_KC248193.fa",
+            "HCV_1n_KJ439775.fa",
+            "HCV_1g_AM910652.fa",
+            "HCV_1b_AJ238799.fa",
+            "HCV_1k_KJ439774.fa",
+            "HCV_1j_KJ439773.fa",
+            "HCV_1c_D14853.fa",
+            "HCV_1h_KC248198.fa",
+            "HCV_1m_KJ439778.fa",
+            "HCV_1a_NC004102.fa",
+            "HCV_3_GU814263.fa",
+            "HCV_3b_D49374.fa",
+            "HCV_3d_KJ470619.fa",
+            "HCV_3e_KJ470618.fa",
+            "HCV_3h_JF735121.fa",
+            "HCV_3i_FJ407092.fa",
+            "HCV_3g_JX227954.fa",
+            "HCV_3k_D63821.fa",
+            "HCV_1a.1.bt2",
+            "HCV_1a.2.bt2",
+            "HCV_1a.3.bt2",
+            "HCV_1a.4.bt2",
+            "HCV_1a.rev.1.bt2",
+            "HCV_1a.rev.2.bt2",
+            "HCV_1b.1.bt2",
+            "HCV_1b.2.bt2",
+            "HCV_1b.3.bt2",
+            "HCV_1b.4.bt2",
+            "HCV_1b.rev.1.bt2",
+            "HCV_1b.rev.2.bt2",
+            "HCV_1c.1.bt2",
+            "HCV_1c.2.bt2",
+            "HCV_1c.3.bt2",
+            "HCV_1c.4.bt2",
+            "HCV_1c.rev.1.bt2",
+            "HCV_1c.rev.2.bt2",
+            "HCV_1d.1.bt2",
+            "HCV_1d.2.bt2",
+            "HCV_1d.3.bt2",
+            "HCV_1d.4.bt2",
+            "HCV_1d.rev.1.bt2",
+            "HCV_1d.rev.2.bt2",
+            "HCV_1e.1.bt2",
+            "HCV_1e.2.bt2",
+            "HCV_1e.3.bt2",
+            "HCV_1e.4.bt2",
+            "HCV_1e.rev.1.bt2",
+            "HCV_1e.rev.2.bt2",
+            "HCV_1g.1.bt2",
+            "HCV_1g.2.bt2",
+            "HCV_1g.3.bt2",
+            "HCV_1g.4.bt2",
+            "HCV_1g.rev.1.bt2",
+            "HCV_1g.rev.2.bt2",
+            "HCV_1h.1.bt2",
+            "HCV_1h.2.bt2",
+            "HCV_1h.3.bt2",
+            "HCV_1h.4.bt2",
+            "HCV_1h.rev.1.bt2",
+            "HCV_1h.rev.2.bt2",
+            "HCV_1i.1.bt2",
+            "HCV_1i.2.bt2",
+            "HCV_1i.3.bt2",
+            "HCV_1i.4.bt2",
+            "HCV_1i.rev.1.bt2",
+            "HCV_1i.rev.2.bt2",
+            "HCV_1j.1.bt2",
+            "HCV_1j.2.bt2",
+            "HCV_1j.3.bt2",
+            "HCV_1j.4.bt2",
+            "HCV_1j.rev.1.bt2",
+            "HCV_1j.rev.2.bt2",
+            "HCV_1k.1.bt2",
+            "HCV_1k.2.bt2",
+            "HCV_1k.3.bt2",
+            "HCV_1k.4.bt2",
+            "HCV_1k.rev.1.bt2",
+            "HCV_1k.rev.2.bt2",
+            "HCV_1l.1.bt2",
+            "HCV_1l.2.bt2",
+            "HCV_1l.3.bt2",
+            "HCV_1l.4.bt2",
+            "HCV_1l.rev.1.bt2",
+            "HCV_1l.rev.2.bt2",
+            "HCV_1m.1.bt2",
+            "HCV_1m.2.bt2",
+            "HCV_1m.3.bt2",
+            "HCV_1m.4.bt2",
+            "HCV_1m.rev.1.bt2",
+            "HCV_1m.rev.2.bt2",
+            "HCV_1n.1.bt2",
+            "HCV_1n.2.bt2",
+            "HCV_1n.3.bt2",
+            "HCV_1n.4.bt2",
+            "HCV_1n.rev.1.bt2",
+            "HCV_1n.rev.2.bt2",
+            "HCV_3.1.bt2",
+            "HCV_3.2.bt2",
+            "HCV_3.3.bt2",
+            "HCV_3.4.bt2",
+            "HCV_3.rev.1.bt2",
+            "HCV_3.rev.2.bt2",
+            "HCV_3b.1.bt2",
+            "HCV_3b.2.bt2",
+            "HCV_3b.3.bt2",
+            "HCV_3b.4.bt2",
+            "HCV_3b.rev.1.bt2",
+            "HCV_3b.rev.2.bt2",
+            "HCV_3d.1.bt2",
+            "HCV_3d.2.bt2",
+            "HCV_3d.3.bt2",
+            "HCV_3d.4.bt2",
+            "HCV_3d.rev.1.bt2",
+            "HCV_3d.rev.2.bt2",
+            "HCV_3e.1.bt2",
+            "HCV_3e.2.bt2",
+            "HCV_3e.3.bt2",
+            "HCV_3e.4.bt2",
+            "HCV_3e.rev.1.bt2",
+            "HCV_3e.rev.2.bt2",
+            "HCV_3g.1.bt2",
+            "HCV_3g.2.bt2",
+            "HCV_3g.3.bt2",
+            "HCV_3g.4.bt2",
+            "HCV_3g.rev.1.bt2",
+            "HCV_3g.rev.2.bt2",
+            "HCV_3h.1.bt2",
+            "HCV_3h.2.bt2",
+            "HCV_3h.3.bt2",
+            "HCV_3h.4.bt2",
+            "HCV_3h.rev.1.bt2",
+            "HCV_3h.rev.2.bt2",
+            "HCV_3i.1.bt2",
+            "HCV_3i.2.bt2",
+            "HCV_3i.3.bt2",
+            "HCV_3i.4.bt2",
+            "HCV_3i.rev.1.bt2",
+            "HCV_3i.rev.2.bt2",
+            "HCV_3k.1.bt2",
+            "HCV_3k.2.bt2",
+            "HCV_3k.3.bt2",
+            "HCV_3k.4.bt2",
+            "HCV_3k.rev.1.bt2",
+            "HCV_3k.rev.2.bt2",
+            "UDS-SEQ0000_P000M0000_S5_L001_R1_001.fastq",
+            "UDS-SEQ0000_P000M0000_S5_L001_R2_001.fastq"
+           ],
+    "output_subdomain": 
+        [
+              "Reference Selection (Genotype)",
+              "title:Genotype log",
+              "uri:T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/GT_23-11-2016_14-51-20/GT_23-11-2016_14-51-20.log",
+              "mime-type:txt",
+
+              "mutation_profile:",
+              "title:mutation profile",
+              "uri:T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/Athena_23-11-2016_14-51-20.log",
+              "mime-type:txt"
+
+              "Alginment results",
+              "title:Alignment results",
+              "uri:T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a.sam",
+              "mime-type:sam",
+
+              "First consensus sequence",
+              "title: First consensus sequence",
+              "uri:T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_Consensus.fa",
+              "mime-type:fasta",
+
+              "Second consensus sequence (15% threshold)",
+              "title:mutation profile",
+              "uri:T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_Athena_Consensus_15.fa",
+              "mime-type:fasta",
+      
+              "Second consensus sequence (25% threshold)",
+              "title:mutation profile",
+              "uri:T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_Athena_Consensus_25.fa",
+              "mime-type:fasta",
+
+              "Region of Interest Coverage-graph",
+              "title:Coverage plot on targeted regions",
+              "uri:T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_NS3-4A.png",
+              "mime-type:png",
+      
+              "Region of Interest Coverage-graph",
+              "title:Coverage plot on targeted regions",
+              "uri:T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_NS5A.png",
+              "mime-type:png",
+      
+              "Region of Interest Coverage-graph",
+              "title:Coverage plot on targeted regions",
+              "uri:T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_NS5B.png",
+              "mime-type:png",
+      
+              "Region of Interest Coverage-graph (Forward/Reverse Reads)",
+              "title:Coverage plot on targeted regions",
+              "uri:T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_NS3-4A_FR.png",
+              "mime-type:png",
+      
+              "Region of Interest Coverage-graph (Forward/Reverse Reads)",
+              "title:Coverage plot on targeted regions",
+              "uri:T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_NS5A_FR.png",
+              "mime-type:png",
+      
+              "Region of Interest Coverage-graph (Forward/Reverse Reads)",
+              "title:Coverage plot on targeted regions",
+              "uri:T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_NS5B_FR.png",
+              "mime-type:png",
+
+              "Region of Interest Second consensus sequence (15%)",
+              "title:mutation profile",
+              "uri:T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_Athena_Consensus_NS3-4A_15.fa",
+              "mime-type:fasta",
+      
+              "Region of Interest Second consensus sequence (25%)",
+              "title:mutation profile",
+              "uri:T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_Athena_Consensus_NS3-4A_25.fa",
+              "mime-type:fasta",
+      
+              "Region of Interest Second consensus sequence (15%)",
+              "title:mutation profile",
+              "uri:T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_Athena_Consensus_NS5A_15.fa",
+              "mime-type:fasta",
+      
+              "Region of Interest Second consensus sequence (25%)",
+              "title:mutation profile",
+              "uri:T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_Athena_Consensus_NS5A_25.fa",
+              "mime-type:fasta",
+      
+              "Region of Interest Second consensus sequence (15%)",
+              "title:mutation profile",
+              "uri:T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_Athena_Consensus_NS5B_15.fa",
+              "mime-type:fasta",
+      
+              "Region of Interest Second consensus sequence (25%)",
+              "title:mutation profile",
+              "uri:T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_Athena_Consensus_NS5B_25.fa",
+              "mime-type:fasta"
+        ]
+  },
+  "error_domain": [
+    "false negative alignment hits < 0.0010",
+    "false positive mutation calls discovery < 0.0005"
+  ]
+}

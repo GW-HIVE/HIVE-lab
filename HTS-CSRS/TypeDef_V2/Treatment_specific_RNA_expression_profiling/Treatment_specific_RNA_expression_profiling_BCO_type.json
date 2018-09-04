@@ -1,0 +1,38 @@
+{
+    "name" : "Treatment_specific_RNA_expression_profiling_type",
+    "title" : "Type for treatment specific RNA expression profiling type objects type",
+    "_inherit": "BioCompute_base_type",
+    "_fields" : {
+        "parametric_domain" : {
+            "HIVE-algorlda": {
+				"Classifier Column": {
+				    "_type" : "integer"
+				},
+				"Matrix Parsing Mode": {
+					 "_type" : "integer"
+				 },
+				"Bootstrap core fraction": {
+					 "_type" : "float"
+				 },
+				"Functions": {
+					 "_type" : "integer"
+				 }
+            }
+		},
+        "io_domain" : {
+            "input_subdomain" : {
+				"Matrix File": {
+					 "_type": "objectid"
+				 },
+				"Categories File": {
+					 "_type": "objectid"
+				 }
+            },
+            "output_subdomain" : {
+                "_type": "file",
+				"_multi_value" : true
+            }
+        }
+    }
+}
+

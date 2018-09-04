@@ -1,0 +1,343 @@
+{
+        "pipeline_steps":[
+            {
+                "tool_name": "Athena-Reference Selection",
+                "tool_desc": "Genotyping is performed to determine the pathogen genotype-subtype in a sample and to select the best reference to be used during the first mapping step. This is needed for a proper reference-based variant calling. Reads are assigned to the different genotype-subtype reference sequences, thus enabling to calculate the number of reads that got mapped to the selected reference sequences.",
+                "tool_version": "3.0",
+                "tool_package": "Athena",
+                "step_number": "1",
+                "input_uri_list":{
+                    "reference_files":[
+                        {
+                            "name": "HCV genotype reference sequences: multi fasta",
+                            "URI": "T:/NGS_Analytics/Bio_Data/GT_Ref/"
+                        },
+                        {
+                            "name": "Genotyping Bowtie-2 indices",
+                            "URI":"T:/NGS_Analytics/Bio_Data/GT_Ref/"
+                        },
+                        {
+                            "name": "Sample FASTQ Files",
+                            "URI": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/FASTQ/"
+                        }
+                    ],
+                    "input_files":[
+                       "HCV.fa",
+                       "HCV.1.bt2",
+                       "HCV.2.bt2",
+                       "HCV.3.bt2",
+                       "HCV.4.bt2",
+                       "HCV.rev.1.bt2",
+                       "HCV.rev.2.bt2",
+                       "UDS-SEQ0000_P000M0000_S5_L001_R1_001.fastq",
+                       "UDS-SEQ0000_P000M0000_S5_L001_R2_001.fastq"
+                    ]
+                },
+                "output_uri_list":[
+                    "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/GT_18-05-2016_15-13-03/GT_18-05-2016_15-11-22.log",
+                    "Genotyping result stored in SQL database-Hercules table-GT_P using several INSERT queries."
+                ]
+            },
+          {
+            "tool_name": "Athena-First Mapping ",
+            "tool_desc": "In this step the reads from FASTQ files are aligned/mapped to the selected reference by Bowtie2 software tool determined from the reference selection step (Step 1)",
+            "tool_version": "3.0",
+            "tool_package": "Athena",
+            "step_number": "2",
+            "input_uri_list":[
+              "reference_files":[
+              {"name": "HCV reference sequences: individual fasta files",
+               "URI": "T:/NGS_Analytics/Bio_Data/Athena/Ref_fa"},
+              {"name": "Mapping Bowtie-2 indices",
+               "URI": "T:/NGS_Analytics/Bio_Data/Athena/BowtieIndex/"},
+              {"name": "Sample FASTQ Files",
+               "URI": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/FASTQ/"},
+                ]
+              ],
+              "input_files":[
+                "HCV_1d_KJ439768.fa",
+                "HCV_1e_KJ439769.fa",
+                "HCV_1i_KJ439772.fa",
+                "HCV_1l_KC248193.fa",
+                "HCV_1n_KJ439775.fa",
+                "HCV_1g_AM910652.fa",
+                "HCV_1b_AJ238799.fa",
+                "HCV_1k_KJ439774.fa",
+                "HCV_1j_KJ439773.fa",
+                "HCV_1c_D14853.fa",
+                "HCV_1h_KC248198.fa",
+                "HCV_1m_KJ439778.fa",
+                "HCV_1a_NC004102.fa",
+                "HCV_3_GU814263.fa",
+                "HCV_3b_D49374.fa",
+                "HCV_3d_KJ470619.fa",
+                "HCV_3e_KJ470618.fa",
+                "HCV_3h_JF735121.fa",
+                "HCV_3i_FJ407092.fa",
+                "HCV_3g_JX227954.fa",
+                "HCV_3k_D63821.fa",
+                "HCV_1a.1.bt2",
+                "HCV_1a.2.bt2",
+                "HCV_1a.3.bt2",
+                "HCV_1a.4.bt2",
+                "HCV_1a.rev.1.bt2",
+                "HCV_1a.rev.2.bt2",
+                "HCV_1b.1.bt2",
+                "HCV_1b.2.bt2",
+                "HCV_1b.3.bt2",
+                "HCV_1b.4.bt2",
+                "HCV_1b.rev.1.bt2",
+                "HCV_1b.rev.2.bt2",
+                "HCV_1c.1.bt2",
+                "HCV_1c.2.bt2",
+                "HCV_1c.3.bt2",
+                "HCV_1c.4.bt2",
+                "HCV_1c.rev.1.bt2",
+                "HCV_1c.rev.2.bt2",
+                "HCV_1d.1.bt2",
+                "HCV_1d.2.bt2",
+                "HCV_1d.3.bt2",
+                "HCV_1d.4.bt2",
+                "HCV_1d.rev.1.bt2",
+                "HCV_1d.rev.2.bt2",
+                "HCV_1e.1.bt2",
+                "HCV_1e.2.bt2",
+                "HCV_1e.3.bt2",
+                "HCV_1e.4.bt2",
+                "HCV_1e.rev.1.bt2",
+                "HCV_1e.rev.2.bt2",
+                "HCV_1g.1.bt2",
+                "HCV_1g.2.bt2",
+                "HCV_1g.3.bt2",
+                "HCV_1g.4.bt2",
+                "HCV_1g.rev.1.bt2",
+                "HCV_1g.rev.2.bt2",
+                "HCV_1h.1.bt2",
+                "HCV_1h.2.bt2",
+                "HCV_1h.3.bt2",
+                "HCV_1h.4.bt2",
+                "HCV_1h.rev.1.bt2",
+                "HCV_1h.rev.2.bt2",
+                "HCV_1i.1.bt2",
+                "HCV_1i.2.bt2",
+                "HCV_1i.3.bt2",
+                "HCV_1i.4.bt2",
+                "HCV_1i.rev.1.bt2",
+                "HCV_1i.rev.2.bt2",
+                "HCV_1j.1.bt2",
+                "HCV_1j.2.bt2",
+                "HCV_1j.3.bt2",
+                "HCV_1j.4.bt2",
+                "HCV_1j.rev.1.bt2",
+                "HCV_1j.rev.2.bt2",
+                "HCV_1k.1.bt2",
+                "HCV_1k.2.bt2",
+                "HCV_1k.3.bt2",
+                "HCV_1k.4.bt2",
+                "HCV_1k.rev.1.bt2",
+                "HCV_1k.rev.2.bt2",
+                "HCV_1l.1.bt2",
+                "HCV_1l.2.bt2",
+                "HCV_1l.3.bt2",
+                "HCV_1l.4.bt2",
+                "HCV_1l.rev.1.bt2",
+                "HCV_1l.rev.2.bt2",
+                "HCV_1m.1.bt2",
+                "HCV_1m.2.bt2",
+                "HCV_1m.3.bt2",
+                "HCV_1m.4.bt2",
+                "HCV_1m.rev.1.bt2",
+                "HCV_1m.rev.2.bt2",
+                "HCV_1n.1.bt2",
+                "HCV_1n.2.bt2",
+                "HCV_1n.3.bt2",
+                "HCV_1n.4.bt2",
+                "HCV_1n.rev.1.bt2",
+                "HCV_1n.rev.2.bt2",
+                "HCV_3.1.bt2",
+                "HCV_3.2.bt2",
+                "HCV_3.3.bt2",
+                "HCV_3.4.bt2",
+                "HCV_3.rev.1.bt2",
+                "HCV_3.rev.2.bt2",
+                "HCV_3b.1.bt2",
+                "HCV_3b.2.bt2",
+                "HCV_3b.3.bt2",
+                "HCV_3b.4.bt2",
+                "HCV_3b.rev.1.bt2",
+                "HCV_3b.rev.2.bt2",
+                "HCV_3d.1.bt2",
+                "HCV_3d.2.bt2",
+                "HCV_3d.3.bt2",
+                "HCV_3d.4.bt2",
+                "HCV_3d.rev.1.bt2",
+                "HCV_3d.rev.2.bt2",
+                "HCV_3e.1.bt2",
+                "HCV_3e.2.bt2",
+                "HCV_3e.3.bt2",
+                "HCV_3e.4.bt2",
+                "HCV_3e.rev.1.bt2",
+                "HCV_3e.rev.2.bt2",
+                "HCV_3g.1.bt2",
+                "HCV_3g.2.bt2",
+                "HCV_3g.3.bt2",
+                "HCV_3g.4.bt2",
+                "HCV_3g.rev.1.bt2",
+                "HCV_3g.rev.2.bt2",
+                "HCV_3h.1.bt2",
+                "HCV_3h.2.bt2",
+                "HCV_3h.3.bt2",
+                "HCV_3h.4.bt2",
+                "HCV_3h.rev.1.bt2",
+                "HCV_3h.rev.2.bt2",
+                "HCV_3i.1.bt2",
+                "HCV_3i.2.bt2",
+                "HCV_3i.3.bt2",
+                "HCV_3i.4.bt2",
+                "HCV_3i.rev.1.bt2",
+                "HCV_3i.rev.2.bt2",
+                "HCV_3k.1.bt2",
+                "HCV_3k.2.bt2",
+                "HCV_3k.3.bt2",
+                "HCV_3k.4.bt2",
+                "HCV_3k.rev.1.bt2",
+                "HCV_3k.rev.2.bt2",
+                "UDS-SEQ0000_P000M0001_S5_L001_R1_001.fastq",
+                "UDS-SEQ0000_P000M0001_S5_L001_R2_001.fastq"
+                ],
+              "output_uri_list":[
+                "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S8_1a.sam",
+                "Mapping statistics stored in SQL database-Hercules table-Athena using several INSERT queries.",
+                "A log file is generated storing all the vital information corresponding to ongoing analysis."
+             ]
+           }, 
+          {
+            "tool_name": "Athena-Coverage Calculation",
+            "tool_desc": "Coverage is calculated using the SAM file from step 2 (First Mapping) to prepare for step 4. 
+            There are 3 results that are calculated: 1. Total read coverage. 2. Per nucleotide (A, T, G, C) per position read count. 3. Problematic regions with low coverage",
+            "tool_version": "3.0",
+            "tool_package": "Athena",
+            "step_number": "3",
+            "input_uri_list": [
+              {"name": "SAM file from Step 2",
+               "URI": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/"}
+            ],
+            "input_file": [
+              "UDS-SEQ0000_P000M0000_S8_1a.sam"
+            ],
+            "output_uri_list": [
+              "Coverage results stored in RAM."
+            ]
+          },
+          {
+            "tool_name": "Athena-First Consensus Extraction",
+            "tool_desc": "A consensus seqeunce for each sample will be extracted from the First Mapping step. The first consensus sequence is more similar to the reads in the sample
+            than the reference used during First Mapping step. The coordinate of the subtype reference is maintained, i.e. only single base substitutions is incorporated in the first consensus sequence.",
+            "tool_version": "3.0",
+            "tool_package": "Athena",
+            "step_number": "4",
+            "input_file": [
+              "Results generated in Step 3 Coverage Calculation retrieved from RAM."
+            ],
+            "output_uri_list": [
+              "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_18-05-2016_15-41-51_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_Consensus.fa"
+              "Intermediate Bowtie-2 indices generated during Step 4 are stored temporarily in dedicated directory.",
+              "First consensus sequence stored in SQL database-Hercules table-AT_Consensus using several INSERT query."
+            ]
+          },
+          {
+            "tool_name": "Athena-Second Mapping",
+            "tool_desc": "In order to increase the accuracy of the mapping and obtain maximum insight, the reads from sample will be remapped 
+            during the Second Mapping to the extracted First Consensus Sequence from Step 4.",
+            "tool_version": "3.0",
+            "tool_package": "Athena",
+            "step_number": "5",
+            "input_uri_list":[
+              "reference_files":[
+              {"name": "First Consensus Sequence",
+               "URI": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_18-05-2016_15-41-51_HCV_1a/"},
+              {"name": "Sample FASTQ Files",
+               "URI": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/FASTQ/"}
+                ]
+              ],
+            "input_files":[
+               "UDS-SEQ0000_P000M0000_S00_1a_Consensus.fa",
+               "UDS-SEQ0000_P000M0000_S5_L001_R1_001.fastq",
+               "UDS-SEQ0000_P000M0000_S5_L001_R2_001.fastq"
+               "Intermediate Bowtie-2 indices generated during Step 4 are are retrieved from the dedicated directory." ],
+            "output_uri_list": [
+                  "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S8_1a.sam",
+               "Mapping statistics stored in SQL database-Hercules table-Athena and AT_Target using several INSERT queries.",
+               "A log file is updated storing all the vital information corresponding to ongoing analysis.",
+               "Intermediate Bowtie-2 indices generated during Step 4 are now removed from RAM."
+            ]
+          },
+          {
+            "tool_name": "Athena-Coverage Calculation and Coverage graphs",
+            "tool_desc": "From step 5 Second Mapping a coverage table is generated and extracted. 
+            There are 3 results that are calculated: 1. Total read coverage, 2. Per nucleotide (A, T, G, C) per position read count and 3. Problematic regions with low coverage.
+            Coverage graphs are created in order to assess sufficient coverage across the ROI (region of interest)."
+            "tool_version": "3.0",
+            "tool_package": "Athena",
+            "step_number": "6",
+            "input_uri_list": [
+              {"name": "SAM file from Step 5",
+               "URI": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/"}
+            ],
+            "input_files":[
+               "UDS-SEQ0000_P000M0000_S8_1a.sam" ],
+            "output_uri_list": [
+                "Coverage results stored in RAM",
+                "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_NS3-4A_FR.png",
+                "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_NS3-4A.png",
+                "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_NS5A_FR.png",
+                "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_NS5A.png",
+                "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_NS5B_FR.png",
+                "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_NS5B.png"
+            ]
+          },
+          {
+            "tool_name": "Athena-Second Consensus Extraction",
+            "tool_desc": "A second consensus sequence is extracted from Step 5 Second Mapping. This sequence represents the sample consensus sequence (similar to Sanger sequencing). Insertions and deletions are
+            incorporated in this sequence. This consensus sequence can be generated with different ambiguity thresholds. By default, a 25% ambiguity threshold is used to generate the second consensus sequence.
+            If required, the default setting can be changed to a different ambiguity threshold to generate the second consensus sequence.",
+            "tool_version": "3.0",
+            "tool_package": "Athena",
+            "step_number": "7",
+            "input_uri_list": [
+              "Results generated in Step 6 Coverage Calculation and Coverage graphs retrieved from RAM."
+            ],
+            "output_uri_list": [
+              "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_Athena_Consensus_15.fa",
+              "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_Athena_Consensus_25.fa",
+              "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_Athena_Consensus_NS3-4A_15.fa",
+              "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_Athena_Consensus_NS3-4A_25.fa",
+              "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_Athena_Consensus_NS5A_15.fa",
+              "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_Athena_Consensus_NS5A_25.fa",
+              "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_Athena_Consensus_NS5B_15.fa",
+              "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/UDS-SEQ0000_P000M0000_S00_1a_Athena_Consensus_NS5B_25.fa",
+              "A log file is updated storing all the vital information corresponding to ongoing analysis.",
+              "Second consensus sequence stored in SQL database-Hercules table-AT_Consensus using several INSERT query."
+            ]
+          },
+          {      
+            "tool_name": "Athena-Variant Calling",
+            "tool_desc": "Mutations, Insertions and Deletions are detected in Step 5 Second Mapping, where the reads are compared to the selected reference sequence. The use of a sample specific consensus sequence as
+            a reference in the second mapping ensures a higher mapping efficiency and a higher coverage per nucleotide per position. Variants are detected not only on the nucleotide level but also on 
+            the translated amino acid level."
+            "tool_version": "3.0",
+            "tool_package": "Athena",
+            "step_number": "8",
+            "input_uri_list": [
+              {"name": "SAM file from Step 5",
+               "URI": "T:/NGS_Analytics_live/NGS_Data/P000/P000M0000/UDS-SEQ0000/ATHENA_23-11-2016_14-51-20_HCV_1a/"}
+            ],
+            "input_files":[
+               "UDS-SEQ0000_P000M0000_S8_1a.sam",
+               "Subtype reference determined at Step 1 Reference selection retreived from RAM."],
+            "output_uri_list": [
+              "A log file is updated storing all the vital information corresponding to ongoing analysis.",
+              "Amino acids reference and mutation results stored in SQL database-Hercules tables-AT_Target, AT_AA_var, AT_CODON_var, AT_NT_var, AT_T_Consensus and AT_LowCoverage using several INSERT queries.",
+            ]
+          }           
+        ]    }

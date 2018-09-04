@@ -1,0 +1,321 @@
+{
+    "object_id": 1270,
+    "type_id": 361,
+    "provenance_domain": {
+        "name": "HCV1a [taxID:31646] ledipasvir [PubChem:67505836] resistance SNP [SO:0000694] detection", 
+        "structured_name": "HCV1a [taxonomy:$taxonomy] mutation detection", 
+        "version": "1.1",
+        "digital_signature": "905d7fce3f3ac64c8ea86f058ca71658", 
+        "review": [
+            {
+                "status": "approved",
+                "comment": "Approved by GW staff. Waiting for approval from FDA Reviewer",
+                "reviewer": {
+					"author": {
+						"type": "orcid",
+						"orcid": "0000-0003-1409-4549"
+						}
+					}
+            },
+            {
+                "type": "entity", 
+                "entity": { 
+                    "name": "Erick Donaldson", 
+                    "affiliation": "FDA", 
+                    "email": "Eric.Donaldson@fda.hhs.gov"
+                }
+            }
+        ],
+        "derived_from" : null,
+        "obsolete" : null,
+        "embargo" : {
+            "start_time": null,
+            "end_time": null
+        },
+        "created": "2017-01-24T09:40:17-0500", 
+        "modified": "2018-03-12T12:30:15-0400", 
+        "authors": [
+            {
+                "type": "entity", 
+                "entity": { 
+                    "name": "Erick Donaldson", 
+                    "affiliation": "FDA", 
+                    "email": "Eric.Donaldson@fda.hhs.gov"
+                }
+            },
+            {
+                "type": "orcid",
+                "orcid": "0000-0003-1409-4549"
+            }
+        ]
+    },
+    "usability_domain": [
+        "Identify baseline single nucleotide polymorphisms SNPs [SO:0000694], insertions [SO:0000667], and deletions [SO:0000045] that correlate with reduced ledipasvir [PubChem:67505836] antiviral drug efficacy in Hepatitis C virus subtype 1 [taxID:31646]", 
+        "Identify treatment emergent amino acid substitutions [SO:0000048] that correlate with antiviral drug treatment failure", 
+        "Determine whether the treatment emergent amino acid substitutions [SO:0000048] identified correlate with treatment failure involving other drugs against the same virus", 
+        "GitHub CWL example: https://github.com/mr-c/hive-cwl-examples/blob/master/workflow/hive-viral-mutation-detection.cwl#L20"
+    ], 
+    "extensions":{
+        "github_extension": {
+            "github_URL": "https://github.com/common-workflow-language/hive-cwl-examples", 
+            "gitHub_URI": {
+                "address": "https://github.com/common-workflow-language/hive-cwl-examples/blob/master/workflow/hive-viral-mutation-detection.cwl",
+                "access_time": "2018-03-06T15:20:37-0500"
+            }, 
+            "github_repository": "hive-cwl-examples"
+        }, 
+        "FHIR_extension" : {},
+        "IEEE_extension" : {}
+    },
+    "description_domain": {
+        "keywords": [
+            "HCV1a", 
+            "Ledipasvir", 
+            "antiviral resistance", 
+            "SNP", 
+            "amino acid substitutions"
+        ], 
+        "xref": [
+            {
+                "source": "pubchem.compound",
+                "db": "PubChem-compound",
+                "id": "67505836", 
+                "access_time": "2018-13-02T10:15-05:00"
+            },
+            {
+                "source": "pubmed",
+                "db": "PubMed",
+                "id": "26508693", 
+                "access_time": "2018-13-02T10:15-05:00"
+            },
+            {
+                "source": "so",
+                "db": "Sequence Ontology",
+                "id": "0000048", 
+                "access_time": "2018-13-02T10:15-05:00"
+            },
+            {
+                "source": "taxonomy",
+                "db": "Taxonomy",
+                "id": "31646", 
+                "access_time": "2018-13-02T10:15-05:00"
+            }
+        ], 
+        "pipeline_steps": {
+            "tool": [
+                {
+                    "step_number": "1", 
+                    "name": "HIVE-hexagon", 
+                    "description": "Alignment of reads to a set of references", 
+                    "version": "1.3", 
+                    "prerequisite": [
+                        {
+                            "name": "Hepatitis C virus genotype 1", 
+                            "URI": {
+                                "address": "http://www.ncbi.nlm.nih.gov/nuccore/22129792",
+                                "access_time": "2017-01-24T09:40:17-0500"
+                            }
+                        }, 
+                        {
+                            "name": "Hepatitis C virus type 1b complete genome", 
+                            "URI": {
+                                "address": "http://www.ncbi.nlm.nih.gov/nuccore/5420376",
+                                "access_time": "2017-01-24T09:40:17-0500"
+                            }
+                        }, 
+                        {
+                            "name": "Hepatitis C virus (isolate JFH-1) genomic RNA", 
+                            "URI": {
+                                "address": "http://www.ncbi.nlm.nih.gov/nuccore/13122261",
+                                "access_time": "2017-01-24T09:40:17-0500"
+                            }
+                        }, 
+                        {
+                            "name": "Hepatitis C virus clone J8CF, complete genome", 
+                            "URI": {
+                                "address": "http://www.ncbi.nlm.nih.gov/nuccore/386646758",
+                                "access_time": "2017-01-24T09:40:17-0500"
+                            }
+                        }, 
+                        {
+                            "name": "Hepatitis C virus S52 polyprotein gene", 
+                            "URI": {
+                                "address": "http://www.ncbi.nlm.nih.gov/nuccore/295311559",
+                                "access_time": "2017-01-24T09:40:17-0500"
+                            }
+                        }
+                    ], 
+                    "input_uri_list": [
+                        {
+                            "address": "https://hive.biochemistry.gwu.edunuc-read/514683",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        }, 
+                        {
+                            "address": "https://hive.biochemistry.gwu.edunuc-read/514682",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        }
+                    ], 
+                    "output_uri_list": [
+                        {
+                            "address": "https://hive.biochemistry.gwu.edudata/514769/allCount-aligned.csv",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        }
+                    ]
+                },
+                {
+                    "step_number": "2", 
+                    "name": "HIVE-heptagon", 
+                    "description": "variant calling", 
+                    "version": "1.3", 
+                    "prerequisites": null, 
+                    "input_uri_list": [
+                        {
+                            "address": "https://hive.biochemistry.gwu.edudata/514769/dnaAccessionBased.csv",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        }
+                    ], 
+                    "output_uri_list": [
+                        {
+                            "address": "https://hive.biochemistry.gwu.edudata/514801/SNPProfile.csv",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        }, 
+                        {
+                            "address": "https://hive.biochemistry.gwu.edudata/14769/allCount-aligned.csv",
+                            "access_time": "2017-01-24T09:40:17-0500"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "execution_domain": {
+        "script_type": "text",
+        "script": "https://hive.biochemistry.gwu.edu/workflows/antiviral_resistance_detection_hive.sh",
+        "script_driver": "shell",
+        "pipeline_version": "2.0", 
+        "platform": "hive", 
+        "software_prerequisites": [
+            {
+                "name": "HIVE-hexagon", 
+                "version": "1.3"
+            }, 
+            {
+                "name": "HIVE-heptagon", 
+                "version": "1.3"
+            }
+        ],
+        "domain_prerequisites": [
+            {
+                "name": "generic name", 
+                "url": "protocol://domain:port/application/path"
+            }, 
+            {
+                "name": "access to ftp", 
+                "url": "ftp://:22/"
+            }, 
+            {
+                "name": "access to e-utils", 
+                "url": "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
+            }, 
+            {
+                "name": "GitHub", 
+                "URL": "https://github.com/"
+            }
+        ], 
+        "env_parameters": {
+            "OSTYPE": "linux", 
+            "QPRIDE_BIN": "~qpride/bin"
+        }
+    }, 
+    "parametric_domain": {
+        "heptagon_divergence_threshold_percent": "30", 
+        "hexagon_minimum_coverage": "15", 
+        "hexagon_seed": "14", 
+        "heptagon_freq_cutoff": "0.10", 
+        "hexagon_minimum_match_len": "66"
+    }, 
+    "io_domain": {
+        "input_subdomain": {
+            "subject": [
+                {
+                    "name": "Hepatitis C virus genotype 1", 
+                    "URI": {
+                        "address": "http://www.ncbi.nlm.nih.gov/nuccore/22129792",
+                        "access_time": "2017-01-24T09:40:17-0500"
+                    }
+                }, 
+                {
+                    "name": "Hepatitis C virus type 1b complete genome", 
+                    "URI": {
+                        "address": "http://www.ncbi.nlm.nih.gov/nuccore/5420376",
+                        "access_time": "2017-01-24T09:40:17-0500"
+                    }
+                }, 
+                {
+                    "name": "Hepatitis C virus (isolate JFH-1) genomic RNA", 
+                    "URI": {
+                        "address": "http://www.ncbi.nlm.nih.gov/nuccore/13122261",
+                        "access_time": "2017-01-24T09:40:17-0500"
+                    }
+                }, 
+                {
+                    "name": "Hepatitis C virus clone J8CF, complete genome", 
+                    "URI": {
+                        "address": "http://www.ncbi.nlm.nih.gov/nuccore/386646758",
+                        "access_time": "2017-01-24T09:40:17-0500"
+                    }
+                }, 
+                {
+                    "name": "Hepatitis C virus S52 polyprotein gene", 
+                    "URI": {
+                        "address": "http://www.ncbi.nlm.nih.gov/nuccore/295311559",
+                        "access_time": "2017-01-24T09:40:17-0500"
+                    }
+                }
+            ],
+            "query": [
+                {
+                    "name": "HCV1a_drug_resistant_sample0001-01", 
+                    "URI": {
+                        "address": "https://hive.biochemistry.gwu.edunuc-read/514682",
+                        "access_time": "2017-01-24T09:40:17-0500"
+                    }
+                }, 
+                {
+                    "name": "HCV1a_drug_resistant_sample0001-02", 
+                    "URI": {
+                        "address": "https://hive.biochemistry.gwu.edunuc-read/514683",
+                        "access_time": "2017-01-24T09:40:17-0500"
+                    }
+                }
+            ]
+        }, 
+        "output_subdomain": [
+            {
+                "mime-type": "text/csv", 
+                "URI": { 
+                    "address": "https://hive.biochemistry.gwu.edudata/514769/dnaAccessionBased.csv",
+                    "access_time": "2017-01-24T09:40:17-0500"
+                }
+            }, 
+            {
+                "mime-type": "text/csv", 
+                "uri": {
+                    "address": "https://hive.biochemistry.gwu.edudata/514801/SNPProfile*.csv",
+                    "access_time": "2017-01-24T09:40:17-0500"
+                }
+            }
+        ]
+    }, 
+    "error_domain": {
+        "empirical_error": {
+            "false negative alignment hits": "<0.0010", 
+            "false discovery": "<0.05"
+        }, 
+        "algorithmic_error": {
+            "false positive mutation calls discovery": "<0.0005", 
+            "false_positive_mutation_calls_discovery": "<0.00005", 
+            "false_discovery": "0.005"
+        }
+    }
+}

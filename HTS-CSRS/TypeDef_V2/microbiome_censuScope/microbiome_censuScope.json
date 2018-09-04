@@ -1,0 +1,275 @@
+{
+    "_type": "microbiome_censuScope_type", 
+    "provenance_domain": {
+        "name": "Microbiome composition of mice following injection of TNF antagonists", 
+        "structured_name": "Microbiome composition of mice following injection of TNF antagonists", 
+        "version": "1.1", 
+        "digital_signature": "905d7fce3f3ac64c8ea86f058ca71658", 
+        "review": [
+            {
+                "status": "unreviewed",
+                "comment": "Waiting for approval from FDA Reviewer",
+                "reviewer": {"type": "orcid", "orcid": " https://orcid.org/0000-0002-4868-4785" }
+            },
+            {
+                "status": "unreviewed",
+                "comment": "The BCO needs to be reviewed, but it looks fine",
+                "reviewer": {
+                    "type": "entity", 
+                    "entity": { 
+                        "name": "Vahan Simonyan", 
+                        "affiliation": "FDA", 
+                        "email": "Vahan.Simonyan@fda.hhs.gov"
+                    }
+                }
+            }
+        ],
+        "embargo" : {
+            "start_time": "2018-03-21T11:06:17-0500",
+            "end_time": "2018-03-21T11:06:17-0500"
+        },
+        "created": "2018-03-19T11:06:17-0500",
+        "modified": "2018-03-19T11:06:17-0500", 
+        "author": [
+            {
+                "type": "entity",
+                "entity": {
+	                "name": "Luis V. Santana", 
+	                "affiliation": "FDA", 
+	                "email": "Luis.Santana-Quintero@fda.hhs.gov"
+                }
+            }
+        ]
+    },
+    "usability_domain": [
+		"Microbiome composition will be analyzed, looking specifically for the presence of previously implicated bacteria (helicobacter pylori [taxID:210], segmented filamentous bacteria [taxID:49118], clostridial firmicutes [taxID:1239], bacteroides fragilis[taxID:817], prevotellaceae[taxID:171552], lachnospiraceae[taxID:186803], Streptococcus phosphoreus[taxID:659], roseburia[taxID:841], ruminococcus[taxID:1263], Faecalibacterium prausnitzii[taxID:853], and Enterobacteriaceae[taxID:543]) as well as aiming to identify new species of relevance to autoimmune disease. Groups will be analyzed to identify any stratification that occurs based on treatment or sequence factors."
+	],
+    "description_domain": {
+        "keywords": [
+        	{
+	        	"key": "search terms",
+	        	"value": [
+	            	"microbiome",
+	            	"inflammatory cytokine",
+	            	"TNF",
+	                "autoimmune disease", 
+	            	"mouse", 
+	            	"mice", 
+	            	"bacteria"
+            	]
+            }
+        ],
+        "xref": [
+        	{
+	            "source": "taxonomy",
+	            "db": "Taxonomy",
+	            "name": "Helicobacter pylori",
+	            "id": "210", 
+	            "access_time": "2018-03-19T11:06:17-0500"
+        	},
+	        {
+	            "source": "taxonomy",
+	            "db": "Taxonomy",
+	            "name": "segmented filamentous bacteria",
+	            "id": "49118", 
+	            "access_time": "2018-03-19T11:06:17-0500"
+	        },
+	        {
+	            "source": "taxonomy",
+	            "db": "Taxonomy",
+	            "name": "clostridial firmicutes",
+	            "id": "1239", 
+	            "access_time": "2018-03-19T11:06:17-0500"
+	        },
+	        {
+	            "source": "taxonomy",
+	            "db": "Taxonomy",
+	            "name": "bacteroides fragilis",
+	            "id": "817", 
+	            "access_time": "2018-03-19T11:06:17-0500"
+	        },
+	        {
+	            "source": "taxonomy",
+	            "db": "Taxonomy",
+	            "name": "prevotellaceae",
+	            "id": "171552", 
+	            "access_time": "2018-03-19T11:06:17-0500"
+	        },
+	        {
+	            "source": "taxonomy",
+	            "db": "Taxonomy",
+	            "name": "lachnospiraceae",
+	            "id": "186803", 
+	            "access_time": "2018-03-19T11:06:17-0500"
+	        },
+	        {
+	            "source": "taxonomy",
+	            "db": "Taxonomy",
+	            "name": "roseburia",
+	            "id": "841", 
+	            "access_time": "2018-03-19T11:06:17-0500"
+	        },
+	        {
+	            "source": "taxonomy",
+	            "db": "Taxonomy",
+	            "name": "ruminococcus",
+	            "id": "1263", 
+	            "access_time": "2018-03-19T11:06:17-0500"
+	        },
+	        {
+	            "source": "taxonomy",
+	            "db": "Taxonomy",
+	            "name": "Faecalibacterium prausnitzii",
+	            "id": "853", 
+	            "access_time": "2018-03-19T11:06:17-0500"
+	        },
+	        {
+	            "source": "taxonomy",
+	            "db": "Taxonomy",
+	            "name": "Enterobacteriaceae",
+	            "id": "543", 
+	            "access_time": "2018-03-19T11:06:17-0500"
+	        }
+		], 
+    	"pipeline_steps": {
+            "tool": {
+                "step_number": "1", 
+                "name": "HIVE-Screening (CensuScope)", 
+                "description": "Extract Taxonomic Information from Alignments of reads to a set of references", 
+                "version": "2.1", 
+                "prerequisite": {
+                        "name": "SILVA Bacterial Database", 
+                        "URI": {
+                            "address": "https://www.arb-silva.de/",
+                            "access_time": "2016-12-12T19:40:17-0500"
+                        }
+                    }, 
+                "input_uri_list": [
+                        {
+                            "address": "https://minihive.fda.gov/dna.cgi?cmd=record&ids=279226",
+                            "access_time": "2016-11-28T09:40:17-0500"
+                        }, 
+                        {
+                            "address": "https://minihive.fda.gov/dna.cgi?cmd=record&ids=279225",
+                            "access_time": "2016-11-28T09:40:17-0500"
+                        }
+                    ], 
+                "output_uri_list": [
+                        {
+                            "address": "https://minihive.fda.gov/dna.cgi?cmd=dna-screening&ids=283784",
+                            "access_time": "2016-11-28T09:40:17-0500"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "execution_domain": {
+        "script_type": "manual",
+        "script": "https://minihive.fda.gov/dna.cgi/dna.cgi?cmd=home",
+        "pipeline_version": "2.0", 
+        "platform": "hive", 
+        "software_prerequisites": [
+            {
+                "name": "HIVE-Screening (CensuScope)", 
+                "version": "2.1",
+                "uri": {
+                    "address": "https://minihive.fda.gov/dna.cgi/dna.cgi?cmd=dna-screening&cmdMode=-",
+                    "access_time": "2016-11-28T09:40:17-0500"
+                }
+            }
+        ],
+        "domain_prerequisites": [
+            {
+                "name": "access HIVE with proper credentials", 
+                "url": "https://minihive.fda.gov/dna.cgi/dna.cgi?cmd=login"
+            } 
+        ], 
+        "env_parameters": {
+            "HOSTTYPE" :"x86_64-linux"
+        }
+    }, 
+    "parametric_domain": {
+        "HIVE-Screening" : {
+        	"CensusIterations": 5,
+    		"CensuslimitIterations": 2,
+    		"chunk_size": 4000,
+    		"cutOffvalue": 0.0005,
+    		"filterNs": 1,
+    		"random_seed": 0,
+    		"Sample": 1000,
+    		"scissors": "hiveseq",
+    		"slice": 0,
+    		"split": "-",
+    		"alignSelector": "svc-align-blast",
+    		"automanual": 0,
+    		"taxDepth": "species",
+    		"resultInQueryDir": 0,
+    		"selfStopping": 1,
+    		"storeAlignments": 0,
+    		"blastparams": {
+        		"blastWordSize": 28
+    		},
+    		"censusScope_otherInput": {
+        		"textBasedColumn": 0,
+        		"textBasedFileSeparator": 1
+    		}
+        }
+    }, 
+    "io_domain": {
+        "input_subdomain": {
+            "subject": [
+                {
+                    "name": "silvaBacteria", 
+                    "URI": {
+                        "address": "https://minihive.fda.gov/281783",
+                        "access_time": "2017-01-24T09:40:17-0500"
+                    }
+                }
+            ],
+            "query": [
+                {
+                    "name": "N704-S502_S16_L001_R1_001.fastq", 
+                    "URI": {
+                        "address": "https://minihive.fda.gov/279225",
+                        "access_time": "2017-01-24T09:40:17-0500"
+                    }
+                }, 
+                {
+                    "name": "N704-S502_S16_L001_R2_001.fastq", 
+                    "URI": {
+                        "address": "https://minihive.fda.gov/279226",
+                        "access_time": "2017-01-24T09:40:17-0500"
+                    }
+                } 
+            ]
+        }, 
+        "output_subdomain": [
+            {
+                "mime-type": "text/csv",
+                "name": "dna-screening #24 _ N704-S502_S16_L001_R2_001.fastq, N704-S502_S16_L001_R1_001.fastq-283784-dnaTaxidBasedResult.csv",
+                "URI": { 
+                    "address": "https://minihive.fda:data/283784-dnaTaxidBasedResult.csv",
+                    "access_time": "2017-01-24T09:40:17-0500"
+                }
+            }, 
+            {
+                "mime-type": "text/csv",
+                "name": "dna-screening #24 _ N704-S502_S16_L001_R2_001.fastq, N704-S502_S16_L001_R1_001.fastq-283784-dnaAccessionBasedResult.csv",
+                "URI": { 
+                    "address": "https://minihive.fda:data/283784-dnaAccessionBasedResult.csv",
+                    "access_time": "2017-01-24T09:40:17-0500"
+                }
+            } 
+        ]
+    }, 
+    "error_domain": {
+        "empirical_error": {
+            "false negative alignment hits": "<1e-6", 
+            "false discovery": "<0.05"
+        }, 
+        "algorithmic_error": {
+            "empty alignments output": "true"
+        }
+    }
+}

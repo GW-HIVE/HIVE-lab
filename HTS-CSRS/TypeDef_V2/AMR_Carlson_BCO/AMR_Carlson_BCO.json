@@ -1,0 +1,186 @@
+{
+    "_type": "BioCompute_Antibiotic_Resistance_Detection_Type",
+    "provenance_domain": {
+        "name": "Antibiotic Restance Gene Detection",
+        "structured_name": "Antibiotic Resistance Gene Dection Pipeline",
+        "version": "1.1",
+        "digital_signature": "642d7gcd3f2ac64a8e235dc8adff058ca7a63",
+        "review": [
+            {
+                "status": "approved",
+                "comment": "Approved by Dr. Simonyan. Waiting for approval from 2nd Reviewer",
+                "reviewer": {
+                    "type": "orcid",
+                    "orcid": "http://orcid.org/0000-0002-4868-4785"
+                }
+            }
+        ],
+        "embargo": {
+            "end_time": "2018-03-20T19:40:17-0500"
+        },
+        "created": "2018-03-19T09:40:17-0500",
+        "modified": "2018-03-21T21:29:14-0500",
+        "authors": [
+            {
+                "type": "entity",
+                "entity": {
+                    "name": "Alin Voskanian-kordi",
+                    "affiliation": "FDA",
+                    "email": "alin.voskanian-kordi@fda.hhs.gov"
+                }
+            }
+        ]
+    },
+    "usability_domain": [
+        "Detect antibiotic resistance gene or SNP presence using the CARD datasets"
+    ],
+    "description_domain": {
+        "keywords": [
+            {
+              "key": "search terms",
+              "value": ["Antibiotic","CARD","Antibiotic resistance","SNP"]
+            }
+        ],
+        "xref": [
+            {
+                "source": "Antibiotic Resistance References",
+                "db": "CARD",
+                "id": "nucleotide_fasta_protein_overexpression_model.fasta,nucleotide_fasta_protein_variant_model.fasta,nucleotide_fasta_rRNA_gene_variant_model.fasta,nucleotide_fasta_protein_knockout_model.fasta,nucleotide_fasta_protein_homolog_model.fasta ",
+                "access_time": "2018-02-02T10:15-05:00"
+            }
+        ],
+        "pipeline_steps": {
+            "tool": [
+                {
+                    "step_number": "1",
+                    "name": "HIVE-hexagon",
+                    "description": "Alignment of reads to a set of references",
+                    "version": "1.3",
+                    "prerequisite": [
+                        {
+                            "name": "CARD: Comprehensive Antibiotic Resistance Database",
+                            "uri": {
+                                "address": "https://card.mcmaster.ca/latest/data",
+                                "access_time": "2018-02-20T09:40:17-0500"
+                            }
+                        }
+                    ],
+                    "input_uri_list": [
+                        {
+                            "address": "https://maxihive.fda.gov/dna.cgi?cmd=record&ids=125",
+                            "access_time": "2018-02-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "https://maxihive.fda.gov/dna.cgi?cmd=record&ids=126",
+                            "access_time": "2018-02-24T09:40:17-0500"
+                        },
+                        {
+                            "address": "https://maxihive.fda.gov/dna.cgi?cmd=record&ids=137",
+                            "access_time": "2018-02-24T09:40:17-0500"
+                        }
+                    ],
+                    "output_uri_list": [
+                        {
+                            "address": "https://maxihive.fda.gov/dna.cgi?cmd=objFile&ids=82738&filename=alCount-hit_list.csv",
+                            "access_time": "2018-02-24T09:40:17-0500"
+                        }
+                    ]
+                },
+                {
+                    "step_number": "2",
+                    "name": "HIVE-heptagon",
+                    "description": "variant calling",
+                    "version": "1.3",
+                    "input_uri_list": [
+                        {
+                            "address": "https://maxihive.fda.gov/dna.cgi?cmd=record&ids=82738",
+                            "access_time": "2018-02-24T09:40:17-0500"
+                        }
+                    ],
+                    "output_uri_list": [
+                        {
+                            "address": "https://maxihive.fda.gov/dna.cgi?cmd=objFile&ids=82739&filename=SNPProfile.csv",
+                            "access_time": "2018-02-24T09:50:17-0500"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "execution_domain": {
+        "script_type": "manual",
+        "script": "https://maxihive.fda.gov/dna.cgi?cmd=home",
+        "pipeline_version": "1.0",
+        "platform": "hive",
+        "software_prerequisites": [
+            {
+                "name": "HIVE-hexagon",
+                "version": "2.1",
+                "uri": {
+                    "address": "https://maxihive.fda.gov/dna.cgi?cmd=dna-hexagon",
+                    "access_time": "2018-01-2T09:40:17-0500"
+                }
+            },
+            {
+                "name": "HIVE-heptagon",
+                "version": "2.1",
+                "uri": {
+                    "address": "https://maxihive.fda.gov/dna.cgi?cmd=dna-heptagon",
+                    "access_time": "2018-01-2T10:50:17-0500"
+                }
+            }    
+        ],
+        "domain_prerequisites": [
+            {
+                "name": "hive credentials",
+                "url": "https://maxihive.fda.gov/dna.cgi?cmd=login"
+            }
+        ]
+    },
+    "parametric_domain": {
+        "HIVE-hexagon": {
+            "minMatchLen": "65",
+            "keepAllMatches": "2",
+            "maxMissQueryPercent": "10",
+            "considerGoodSubalignments": "0"
+        },
+        "HIVE-heptagon": {
+            "minCover": "0"
+        }
+    },
+    "io_domain": {
+        "input_subdomain": {
+            "subject": {
+                "name": "Antibiotic Resistance Datase",
+                "uri": {
+                    "address": "https://card.mcmaster.ca/latest/data",
+                    "access_time": "2018-02-01T09:00:17-0500"
+                }
+            },
+            "query": [
+                "https://maxihive.fda.gov/125",
+                "https://maxihive.fda.gov/126",
+                "https://maxihive.fda.gov/127"
+            ]
+        },
+        "output_subdomain": [
+            {
+                "mime-type": "text-csv",
+                "uri": {
+                    "address": "https://maxihive.fda.gov/dna.cgi?cmd=objFile&ids=82738&filename=alCount-hit_list.csv",
+                    "access_time": "2018-02-24T09:40:17-0500"
+                }
+            }
+        ]
+    },
+    "error_domain": {
+        "empirical_error": {
+            "false negative alignment hits": "<0.0010",
+            "false discovery": ""
+        },
+        "algorithmic_error": {
+            "false positive mutation calls discovery": "<0.0005",
+            "false_discovery": "0.005"
+        }
+    }
+}

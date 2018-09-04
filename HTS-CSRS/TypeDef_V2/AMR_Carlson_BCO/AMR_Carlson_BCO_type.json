@@ -1,0 +1,44 @@
+{
+    "name" : "BioCompute_Antibiotic_Resistance_Detection",
+    "title" : "Type for Detection of Antibiotic Resistance gene, productsand associated phenotypes",
+    "_inherit": "BioCompute_base_type",
+    "_fields" : {
+        "parametric_domain" : {
+        "HIVE-hexagon": {
+
+            "minMatchLen": {
+                     "_type" : "integer"
+                 },
+            "keepAllMatches": {
+                     "_type" : "integer"
+                 },
+            "maxMissQueryPercent": {
+                     "_type" : "integer"
+                 },
+            "considerGoodSubalignments": {
+                     "_type" : "integer"
+                 }
+        },
+        "HIVE-heptagon": {
+            "minCover": {
+                     "_type" : "integer"
+                 }
+        },
+        },
+        "io_domain" : {
+            "input_subdomain" : {
+            "subject": {
+                     "_type": "uri"
+                 },
+            "query": {
+                     "_type": "objectid"
+                     "_multi_value": true
+                 }
+            },
+            "output_subdomain" : {
+                "_type": "file"
+            }
+        }
+    }
+}
+

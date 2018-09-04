@@ -1,0 +1,339 @@
+{
+    "name" : "BioCompute_base_type",
+    "title" : "Base type for all BioCompute Object types",
+    "description" : "All BioCompute object types must inherit from this type in order to be compliant with BioCompute framework",
+    "_comment" : [
+        "Since JSON format do not allow comments '_comment' key is used for comments and should be ignored by parsers",
+        "As any object of type 'type' it has its on fields: _type, _id, _inherits, name, title and description",
+        "As base type this type inherits from none",
+        "Identifier of the object since type itself is an object",
+        "Type of this JSON object is 'type'",
+        "For each field default value for '_multi_value' key is 'false' and '_optional' is 'true'"
+    ],
+    "_fields" : {
+        "_comment" : "List of fields of the BioCompute Object type",
+        "provenance_domain": {
+	        "name" : {
+	            "_type" :"string",
+	            "_title" : "Public searchable name for BioCompute Object",
+	            "_optional" : false
+	        },
+	        "structured_name" : {
+	            "_type" :"string",
+	            "_title" : "Name of the BioCompute in accordance to guidelines",
+	            "_comment" : "??? Raja will put pointers into naming guidance"
+	        },
+	        "version" : {
+	            "_type" :"version",
+	            "_title" : "version of the BioCompute Object"
+	        },
+	        "digital_signature" : {
+	            "_type" : "blob",
+	            "_title" : "Digital signature of BioCompute Object by Authority",
+	            "_read_only" : true
+	        },
+	        "review" : {
+	            "_multi_value" : true,
+	            "status" : {
+	                "_type" : "string",
+	                "_constraint" : {
+	                    "_choice" : [ "unreviewed", "in-review", "approved", "rejected", "suspended" ]
+	                },
+	                "_title" : "Current verification status of the BioCompute Object",
+	                "_default_value" : "unreviewed"
+	            },
+	            "reviewer" : { 
+	                "_type": "author"
+	            },
+	            "comment" : {
+	                "_type" : "string",
+	                "_optional" : true
+	            },
+	            "_optional" : true
+	        },
+	        "derived_from" : {
+	            "parent_bco": {
+	                "_type": "objid",
+	                "_optional" : true
+	            }
+	        },
+	        "obsolete" : {
+	            "_type": "datetime" , 
+	            "_optional" : true
+	        },
+	        "embargo" : {
+	            "start_time" : { 
+	                "_type" : "datetime", 
+	                "_optional" : true
+	            },
+	            "end_time" : { 
+	                "_type" : "datetime", 
+	                "_optional" : true
+	            }
+	        },
+	        "created" : {
+	            "_type" :"datetime",
+	            "_title" : "Date and time of the BioCompute Object creation",
+	            "_read_only" : true
+	        },
+	        "modified" : {
+	            "_type" :"datetime",
+	            "_title" : "Date and time of the BioCompute Object was last modified",
+	            "_read_only" : true
+	        },
+	        "authors" : {
+	            "_type" : "author",
+	            "_multi_value" : true
+	        }
+        },
+        "usability_domain" : {
+            "_type" : "string",
+            "_title" : "Text from biospec",
+            "_multi_value" : true
+        },
+        "description domain" : {
+            "keywords" : {
+                "_type" : "keymap",
+                "_multi_value" : true
+            },
+            "xref" : {
+                "_type" : "xref",
+                "_multi_value" : true
+            },
+			"extensions":{
+                "_type" : "json",
+                "_comment" : [
+					"all fields in this domain are BioCompute specific and should be defined in inherited BioCompute type",
+					"This is a space for users to define their own extensions, and will not affect t he validation of BCO type"
+				],
+				"example_extension": {
+		            "github_URL": {
+						"_type" : "url"
+					},
+		            "gitHub_URI": {
+						"_type" : "uri"
+					},
+		            "github_repository": {
+						"_type" :"string"
+					}
+                }
+			},
+            "pipeline_steps" : {
+                "_layout": "array",
+                "tool" : { 
+                    "_multi_value" : true,
+                    "name" : {
+                        "_type" : "string",
+                        "_comment" : "this is a recognized name of the software tool" 
+                    },
+                    "description" : {
+                       "_type" : "string"
+                    },
+					"step_number": {
+						"_type": "integer"
+					},
+                    "version" : {
+                       "_type" : "version"
+                    },
+                    "prerequisite" : {
+					    "_comment" : "reference or required prereqs",
+				        "name" : {
+				            "_type" :"string",
+				            "_title" : "Public searchable name for reference or prereq"
+				        },
+						"URI":{
+							"_type" : "uri"
+						},
+                        "_multi_value" : true
+                    },
+                    "input_list" : {
+                        "_type" : "uri",
+                        "_multi_value" : true
+                    },
+                    "output_list" : {
+                        "_type" : "uri",
+                        "_multi_value" : true
+                    }
+                },
+			    "pipeline_steps_example" : {
+			        "tool": [
+						{
+			                "step_number": "1", 
+			                "name": "HIVE-hexagon", 
+			                "description": "Alignment of reads to a set of references", 
+			                "version": "1.3", 
+			                "prerequisite": [
+			                    {
+			                        "name": "Hepatitis C virus genotype 1", 
+			                        "URI": {
+										"address": "http://www.ncbi.nlm.nih.gov/nuccore/22129792",
+										"access_time": "2017-01-24T09:40:17-0500"
+									}
+			                    }, 
+			                    {
+			                        "name": "Hepatitis C virus type 1b complete genome", 
+			                        "URI": {
+										"address": "http://www.ncbi.nlm.nih.gov/nuccore/5420376",
+										"access_time": "2017-01-24T09:40:17-0500"
+									}
+			                    }, 
+			                    {
+			                        "name": "Hepatitis C virus (isolate JFH-1) genomic RNA", 
+			                        "URI": {
+										"address": "http://www.ncbi.nlm.nih.gov/nuccore/13122261",
+										"access_time": "2017-01-24T09:40:17-0500"
+									}
+			                    }, 
+			                    {
+			                        "name": "Hepatitis C virus clone J8CF, complete genome", 
+			                        "URI": {
+										"address": "http://www.ncbi.nlm.nih.gov/nuccore/386646758",
+										"access_time": "2017-01-24T09:40:17-0500"
+									}
+			                    }, 
+			                    {
+			                        "name": "Hepatitis C virus S52 polyprotein gene", 
+			                        "URI": {
+										"address": "http://www.ncbi.nlm.nih.gov/nuccore/295311559",
+										"access_time": "2017-01-24T09:40:17-0500"
+									}
+			                    }
+			                ], 
+			                "input_uri_list": [
+			                    {
+									"address": "https://hive.biochemistry.gwu.edunuc-read/514683",
+									"access_time": "2017-01-24T09:40:17-0500"
+								}, 
+			                    {
+									"address": "https://hive.biochemistry.gwu.edunuc-read/514682",
+									"access_time": "2017-01-24T09:40:17-0500"
+								}
+			                ], 
+			                "output_uri_list": [
+			                    {
+									"address": "https://hive.biochemistry.gwu.edudata/514769/allCount-aligned.csv",
+									"access_time": "2017-01-24T09:40:17-0500"
+								}
+			                ]
+		            	}
+			        ]
+			    }
+            }
+        },
+        "execution_domain" : {
+            "_optional" : false,
+            "script_type" : {
+               "_type" :"string",
+                "_constraint" : {
+                    "_choice" : [ "url", "text" ]
+                }
+            },
+            "script" : {
+               "_type" : "string"
+            },
+            "script_driver" : {
+               "_type" : "string"
+            },
+            "pipeline_version" : {
+                "_type" : "version"
+            },
+            "platform" : {
+                "_type" : "string"
+            },
+            "software_prerequisites" : {
+                "_multi_value" : true,
+                "name" : {
+                    "_type" : "string"
+                }, 
+                "version" : {
+                    "_type" : "version"
+                },  
+                "url" : {
+                    "_type" : "url",
+					"_optional" : true
+                }
+            },
+            "domain_prerequisites" : {
+                "_multi_value" : true,
+                "name" : {
+                    "_type" : "string"
+                }, 
+                "url" : {
+                    "_type" : "url",
+                    "_multi_value" : true
+                }
+            },
+            "environmental_parameters" : {
+                "_type" : "keyval",
+				"_comment" : "all fields in this here should be defined in inheriting BioCompute subtypes",
+                "_multi_value" : true
+            }
+        },
+        "parametric_domain" : {
+            "_type" : "json",
+            "_comment" : "all fields in this domain should be defined in inheriting BioCompute subtypes",
+		    "parametric_domain_examples": [
+		        {
+			        "name": "maxMissQueryPercent",
+			        "_type" : "integer"
+		        },
+		        {
+			        "name": "keepAllMatches",
+			        "_type" : "integer",
+			        "_default": 1,
+			        "_constraint": {
+			            "_choice": [
+			                {
+			                    "value": 0,
+			                    "title": "First Match"
+			                },
+			                {
+			                    "value": 1,
+			                    "title": "Best first match"
+			                }
+			            ]
+			        }
+			    },
+		        {
+		            "name": "seed",
+					"_type" : "integer",
+		            "_constraint" : {
+		                "eval-js": "$seed>3"
+		            }
+		        }
+			]
+        },
+        "io_domain" : {
+            "input_subdomain" : {
+                "_type" : "json",
+                "_comment" : "all fields in this domain are BioCompute specific and should be defined in inherited BioCompute type",
+                "input_subdomain_example" : {
+                    "query" : { 
+                        "_type": "uri",
+                        "name": "short reads",
+                        "_multi_value": true
+                    },
+                    "subject" :{
+                        "_type": "uri",
+                        "_multi_value": true,
+                        "name": "refernce sequences"
+                    }
+                }
+            },
+            "output_subdomain" : {
+                "_type" : "json",
+                "_comment" : "all fields in this domain are BioCompute specific and should be defined in inherited BioCompute type",
+                "output_subdomain_example": {
+                        "hitlist": {
+                            "uri":"http://hive.....cmd=alHitList",
+                            "mime":"csv"
+                        },
+                        "alignment": {
+                            "uri":"efwwfwfwfwfewewf",
+                            "mime": "text/SAM"
+                        }
+                }
+            }
+        }
+    }
+}

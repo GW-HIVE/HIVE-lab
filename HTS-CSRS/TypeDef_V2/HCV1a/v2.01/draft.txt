@@ -1,0 +1,110 @@
+	    "execution_domain": {
+	        "script_type": "url",
+	        "script" : {
+	            "address":"http://github.com/FDA_HIVE/code/scripts/dodo.cwl",
+	            "access_time" :"01/11/1111 11:11:11 ISO-whatever"
+	        },
+	        "script_driver" : "cwl_tools",
+	        "platform" : "sb_genomics",
+	        "script_type" :"text",
+	        "script" : "blast -n 11 -m 9 \n cat -n 10",
+	        "script_driver": "shell",
+	        "pipeline_version" : "1.2.3",
+	        "platform" : "hive",
+	        "software_prerequisites":  [
+	            {
+	             "name" : "blast",
+	             "version": 9.3,
+	             "url": "ftp://ncbi.nlmnih.gov....."
+	            },
+	            {
+	                "name": "nexttool",
+	                "version": 2.3,
+	                "url": "httpf://jfhwjnffwkjn"
+	            }
+	        ], 
+	        "domain_prerequisites": [
+	            {
+	                    "url": "ftp://:22/",
+	                    "Name": "access to ftp"
+	            },
+	            {
+	                    "url": "http://eutils.ncbi.nlm.nih.gov/entrez/eutils",
+	                    "Name": "access to e-utils"
+	            }
+	        ],
+	        "environmental_parameters": [
+	            {
+	                "key":"OS",
+	                 "value": "Linux _x64"
+	            },
+	            { 
+	                "key": "LD_LIBRARY_PATH",
+	                "value": "/home/qpride/bin"
+	            }
+        
+	        ]
+		},
+    "_core:descriptions" : {
+        "_type" : "type of the object",
+        "_id" : "identifier of the object",
+        "_fields" : "list of fields",
+        "_abstr" : "abstract type",
+         
+        "_limit" :  { // synonym: _constraint
+            
+            "descr" : "constraints on fields",
+             "eval-c/c++" : "C/C++ evaluation constructs",
+             "eval-js" : "Javascript evaluation constructs",
+             
+             "choice" : [ 
+                 "element1" , 
+                 "element2" , 
+                 { 
+                     "view:title" : "Title here",
+                     "value" : "Value here" 
+                 }
+             ],
+             "choice+" : [
+                 "element1", 
+                 "element2"
+             ],
+             "search" : {
+                "url" : "http://domain.com/location/file.csv",
+                "value" : "column name in CSV or field name of JSON where value is located",
+                "view:title" : "column name in CSV of field name of JSON where title is located. This can be eval-js:$id+':'+$name",
+                "view:show" : [ "name of columns to show in selection table", "another column" ],
+                "format" : "json or csv" ,
+                "_comment" : "??? takean input from community on separating model from view"
+             } ,
+             "search+" : {
+                "url" : "http://domain.com/location/file.csv",
+                "value" : "column name in CSV or field name of JSON where value is located",
+                "view:title" : "column name in CSV of field name of JSON where title is located. This can be eval-js:$id+':'+$name",
+                "view:show" : [ "name of columns to show in selection table", "another column" ],
+                "format" : "json or csv" 
+             } ,
+             
+        },
+        "_read_only" :  "writeability of the fields can be true|false. Default for this field is false.",
+        
+        "_optional" : "non mandatory fields, can be true|false. Default for this field is false.",
+        
+        "_default" : "default value. No default value exists for this field",
+        "_multi_value" : "multivalue field can be true|false. Default for this field is false.",
+        
+        "_layout" : "complex fields can be eithe array|list, the default is list",    // ??? discuss     with consoritrum model from view
+        
+        "perm:_public" : "public fields can be true|false. Default for this field is false.", // browseable ???  
+        
+        "view:_hidden" : "hidden fields can be true|false. Default for this field is false.", // ??? view versus model 
+        "view:_role" : "can be input|output|parameter|etc. parameter is default", // ??? view versus model for workflows
+        "view:_order" : "order by which elements are sorted during visualizations", // ??? view vs model
+        
+        "_inherit" : "list of types this type inherits from",
+        "perm:_dependency" : "list of fields used for propagation of permission rules", // permissions and security
+                         
+                
+         "descr" : "description of system variables" 
+    }
+    

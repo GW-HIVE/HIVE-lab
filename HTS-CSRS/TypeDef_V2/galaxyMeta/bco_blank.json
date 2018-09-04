@@ -1,0 +1,198 @@
+{
+    "object_id": ####, 
+    "type": "", 
+    "provenance_domain": {
+        "name": "", 
+        "structured_name": "",
+        "version": "",
+        "digital_signature": "", 
+        "review": [
+            {
+                "status": "approved",
+                "comment": "Approved by GW staff. Waiting for approval from Otsuka Reviewer",
+                "reviewer": {
+                    "orcid": {
+                        "orc_id": "https://orcid.org/0000-0003-1409-4549",
+                        "contribution": "curatedBy"
+                    }
+                }
+            },
+            {
+                "status": "pending",
+                "comment": "",
+                "reviewer": {
+                    "type": "entity", 
+                    "entity": { 
+                        "name": "", 
+                        "affiliation": "", 
+                        "email": "",
+                        "contribution": ""
+                    }
+                }
+            }
+        ],
+        "derived_from" : null,
+        "obsolete" : null,
+        "embargo" : {
+            "start_time": null,
+            "end_time": null
+        },
+        "created": "", 
+        "modified": "", 
+        "contributors": [
+            {
+                "type": "entity", 
+                "entity": { 
+                    "name": "", 
+                    "affiliation": "",
+                    "email": "",
+                    "contribution": "authoredBy"
+                }
+            },
+            {
+                "type": "orcid",
+                "orcid": {
+                    "orc_id": "https://orcid.org/0000-0003-1409-4549",
+                    "contribution": "createdBy"
+                }
+            }
+        ],
+        "license":{
+            "address": "https://creativecommons.org/licenses/by/4.0/",
+            "access_time": "2017-01-24T09:40:17-0500"
+        }
+    },
+    "usability_domain": [
+        ""
+    ], 
+    "extension_domain":{
+        "galaxy_extension": {
+            "galaxy_workflow_URL": "", 
+            "galaxy_URI": {
+                "address": "",
+                "access_time": ""
+            }
+        }
+    },
+    "description_domain": {
+        "keywords": [
+            {
+                "key": "search terms",
+                "value": [
+                    ""
+                ]
+            }
+        ], 
+        "xref": [
+            {
+                "source": "taxonomy",
+                "db": "Taxonomy",
+                "id": "9606", 
+                "access_time": "2018-13-02T10:15-05:00"
+            }
+        ], 
+        "pipeline_steps": {
+            "tool": [
+                {
+                    "step_number": "1", 
+                    "name": "", 
+                    "description": "", 
+                    "version": "", 
+                    "prerequisite": [
+                        {
+                            "name": "", 
+                            "URI": {
+                                "address": "",
+                                "access_time": ""
+                            }
+                        }
+                    ], 
+                    "input_uri_list": [
+                        {
+                            "address": "",
+                            "access_time": ""
+						}
+					], 
+                    "output_uri_list": [
+                        {
+                            "address": "",
+                            "access_time": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "execution_domain": {
+        "script_type": "text",
+        "script": "Galaxy-Workflow-Metagenomics_Pipeline.json",
+        "script_driver": "python",
+        "pipeline_version": "a.0", 
+        "platform": "Galaxy", 
+        "software_prerequisites": [
+            {
+                "name": "", 
+                "version": "",
+                "uri": {
+                    "address": "",
+                    "access_time": ""
+                }
+            }
+        ],
+        "domain_prerequisites": [
+            {
+                "name": "", 
+                "url": ""
+            }
+        ], 
+        "env_parameters": {
+            "" :""
+        }
+    }, 
+    "parametric_domain": {
+        "" : { 
+            "": "",
+            "": ""
+        }
+    }, 
+    "io_domain": {
+        "input_subdomain": {
+            "subject": [
+                {
+                    "name": "", 
+                    "URI": {
+                        "address": "",
+                        "access_time": ""
+                    }
+                }
+            ],
+            "query": [
+                {
+                    "name": "", 
+                    "URI": {
+                        "address": "",
+                        "access_time": ""
+                    }
+                }
+            ]
+        }, 
+        "output_subdomain": [
+            {
+                "mime-type": "", 
+                "URI": { 
+                    "address": "",
+                    "access_time": ""
+                }
+            }
+        ]
+    }, 
+    "error_domain": {
+        "empirical_error": {
+            "": "", 
+            "": ""
+        }, 
+        "algorithmic_error": {
+            "": ""
+        }
+    }
+}

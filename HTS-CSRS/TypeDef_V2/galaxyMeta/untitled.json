@@ -1,0 +1,130 @@
+[
+	{
+		"tool_id": null,
+		"output_uri_list": {
+		},
+		"name": "Input dataset",
+		"tool_version": null,
+		"step_number": 0,
+		"input_uri_list": {
+			"name": "forward_reads.fastq",
+			"URI": ""
+		}
+	},
+	{
+		"tool_id": null,
+		"output_uri_list": {
+		},
+		"name": "Input dataset",
+		"tool_version": null,
+		"step_number": 1,
+		"input_uri_list": {
+			"name": "backward_reads.fastq",
+			"URI": ""
+		}
+	},
+	{
+		"tool_id": "toolshed.g2.bx.psu.edu/repos/geert-vandeweyer/fastq_all_to_sanger/fastq_qual_convert/1.0.4",
+		"output_uri_list": {
+			"address": "output_file.fastqsanger"
+		},
+		"name": "FASTQ QualityConverter",
+		"tool_version": "1.0.4",
+		"step_number": 2,
+		"input_uri_list": {
+			"name": "input_file",
+			"URI": "runtime parameter for tool FASTQ QualityConverter"
+		}
+	},
+	{
+		"tool_id": "toolshed.g2.bx.psu.edu/repos/geert-vandeweyer/fastq_all_to_sanger/fastq_qual_convert/1.0.4",
+		"output_uri_list": {
+			"address": "output_file.fastqsanger"
+		},
+		"name": "FASTQ QualityConverter",
+		"tool_version": "1.0.4",
+		"step_number": 3,
+		"input_uri_list": {
+			"name": "input_file",
+			"URI": "runtime parameter for tool FASTQ QualityConverter"
+		}
+	},
+	{
+		"tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastq_paired_end_interlacer/fastq_paired_end_interlacer/1.2.0.1",
+		"output_uri_list": {
+			"address": "outfile_singles_from_coll.input"
+		},
+		"name": "FASTQ interlacer",
+		"tool_version": "1.2.0.1",
+		"step_number": 4,
+		"input_uri_list": {
+			"name": "reads",
+			"URI": "runtime parameter for tool FASTQ interlacer"
+		}
+	},
+	{
+		"tool_id": "Censuscope",
+		"output_uri_list": {
+			"address": "output.csv"
+		},
+		"name": "Censuscope",
+		"tool_version": "1.0",
+		"step_number": 5,
+		"input_uri_list": {
+			"name": "iter",
+			"URI": "runtime parameter for tool Censuscope"
+		}
+	},
+	{
+		"tool_id": "dlrefgen_1",
+		"output_uri_list": {
+			"address": "output.fasta"
+		},
+		"name": "Download Censuscope Reference Genomes",
+		"tool_version": "0.1.0",
+		"step_number": 6,
+		"input_uri_list": {
+			"name": "input",
+			"URI": "runtime parameter for tool Download Censuscope Reference Genomes"
+		}
+	},
+	{
+		"tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/bowtie2/bowtie2/2.3.4.1",
+		"output_uri_list": {
+			"address": "mapping_stats.txt"
+		},
+		"name": "Bowtie2",
+		"tool_version": "2.3.4.1",
+		"step_number": 7,
+		"input_uri_list": {
+			"name": "library",
+			"URI": "runtime parameter for tool Bowtie2"
+		}
+	},
+	{
+		"tool_id": "fq2fa_1",
+		"output_uri_list": {
+			"address": "output.fasta"
+		},
+		"name": "Paired Fastq to Fasta",
+		"tool_version": "0.1.0",
+		"step_number": 8,
+		"input_uri_list": {
+			"name": "input1",
+			"URI": "runtime parameter for tool Paired Fastq to Fasta"
+		}
+	},
+	{
+		"tool_id": "idba_ud_galaxy",
+		"output_uri_list": {
+			"address": "output.fasta"
+		},
+		"name": "myidba_ud",
+		"tool_version": "1.1.1 (Oct 18, 2012)",
+		"step_number": 9,
+		"input_uri_list": {
+			"name": "min_support",
+			"URI": "runtime parameter for tool myidba_ud"
+		}
+	}
+]

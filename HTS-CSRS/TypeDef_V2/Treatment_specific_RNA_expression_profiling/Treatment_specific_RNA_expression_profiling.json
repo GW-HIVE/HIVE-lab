@@ -1,0 +1,146 @@
+{
+	"_type": "Treatment_specific_RNA_expression_profiling_type",
+	"provenance_domain": {
+		"name": "Treatment Specific RNA expression analysis",
+		"structured_name": "Treatment Specific RNA expression analysis",
+		"version": "1.0",
+		"digital_signature": "",
+		"review": [
+			{
+				"status": "approved",
+				"comment": "Approved by Dr. Simonyan. Waiting for approval from 2nd Reviewer",
+				"reviewer": {
+					"type": "orcid",
+					"orcid": "http://orcid.org/0000-0002-4868-4785"
+				}
+			}
+		],
+		"embargo": {
+			"end_time": "2018-03-23T10:00:00-0500"
+		},
+		"created": "2018-03-21T17:15:00-0500",
+		"modified": "2018-03-21T17:15:00-0500",
+		"authors": [
+			{
+				"type": "entity",
+				"entity": {
+					"name": "Lusine Gasparyan",
+					"affiliation": "DNA-HIVE",
+					"email": "liluvsim@gmail.com"
+				}
+			}
+		]
+	},
+	"usability_domain": [
+		"Identification of discriminant classifiers (linear combination of gene expressions) for differential NGS RNA-seq expressions profiles between treatment and control groups"
+	],
+	"description_domain": {
+		"keywords": [
+		    {
+                  "key": "search terms",
+			      "value": ["RNA-seq","differnial expression","NGS","linear discrimnanat","pathway analysis"]
+		    }
+		],
+		"xref": [
+			{
+				"source": "ncbi",
+				"db": "pmid",
+				"id": "26989153",
+				"access_time": "2018-03-21T17:00-05:00"
+			},
+			{
+				"source": "wikipedia",
+				"db": "wiki",
+				"id": "Linear_discriminant_analysis",
+				"access_time": "2018-03-20T14:00-05:00"
+			}
+		],
+		"pipeline_steps": {
+			"tool": [
+				{
+					"step_number": "1",
+					"name": "HIVE-algorlda",
+					"description": "Monte Carlo Regularized Functional Discriminant Analysis classification",
+					"version": "2.3",
+					"input_uri_list": [
+						{
+							"address": "https://comb.fda.gov/dna.cgi?cmd=objFile&ids=3144449",
+							"access_time": "2018-03-21T17:34:00-0500"
+						},
+						{
+							"address": "https://comb.fda.gov/dna.cgi?cmd=objFile&ids=3145071",
+							"access_time": "2018-03-21T17:34:00-0500"
+						}
+					],
+					"output_uri_list": [
+						{
+							"address": "https://hive.biochemistry.gwu.edu/dna.cgi?cmd=objFile&ids=3145073&filename=ContributionGraph.csv",
+							"access_time": "2018-03-21T17:34:00-0500"
+						},
+						{
+							"address": "https://hive.biochemistry.gwu.edu/dna.cgi?cmd=objFile&ids=3145073&filename=PostCorrelation.csv",
+							"access_time": "2018-03-21T17:34:00-0500"
+						}
+					]
+				}
+			]
+		}
+	},
+	"execution_domain": {
+		"script_type": "manual",
+		"script": "manually execute commands here: https://comb.fda.gov/dna.cgi?cmd=home",
+		"pipeline_version": "1.0",
+		"platform": "hive",
+		"software_prerequisites": [
+			{
+				"name": "HIVE-algorlda",
+				"version": "2.3",
+				"uri": {
+					"address": "https://comb.fda.gov/dna.cgi?cmd=algorlda-new",
+					"access_time": "2018-03-21T17:34:00-0500"
+				}
+			}
+		],
+		"domain_prerequisites": [
+			{
+				"name": "hive credentials",
+				"url": "https://comb.fda.gov/dna.cgi?cmd=login"
+			}
+		]
+	},
+	"parametric_domain": {
+		"HIVE-algorlda": {
+			"Classifier Column": "0",
+			"Matrix Parsing Mode": "0",
+			"Bootstrap core fraction": "0.9",
+			"Functions": "0"
+		}
+	},
+	"io_domain": {
+		"input_subdomain": {
+			"Matrix File": "https://hive.biochemistry.gwu.edu/3144449",
+			"Categories File": "https://hive.biochemistry.gwu.edu/3145071" 
+		},
+		"output_subdomain": [
+			{
+				"mime-type": "text/csv",
+				"uri": {
+					"address": "address": "https://hive.biochemistry.gwu.edu/dna.cgi?cmd=objFile&ids=3145073&filename=ContributionGraph.csv",
+					"access_time": "2018-03-21T17:34:00-0500"
+				
+				}
+			},
+			{
+				"mime-type": "text/csv",
+				"uri": {
+					"address": "https://hive.biochemistry.gwu.edu/dna.cgi?cmd=objFile&ids=3145073&filename=PostCorrelation.csv",
+					"access_time": "2018-03-21T17:34:00-0500"
+				
+				}
+			}
+		]
+	},
+	"error_domain": {
+
+	}
+}

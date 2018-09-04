@@ -1,0 +1,89 @@
+{
+    "name" : "microbiome_censuScope_type",
+    "title" : "Type for microbiome composition of mice using censuScope",
+    "_inherit": "BioCompute_base_type",
+    "_fields" : {
+        "parametric_domain" : {
+			"HIVE-screening": {
+				"CensusIterations": {
+	                     "_type" : "integer"
+                },
+				"CensuslimitIterations": {
+	                     "_type" : "integer"
+                },
+				"chunk_size": {
+	                     "_type" : "integer"
+                },
+				"filterNs": {
+	                     "_type" : "float"
+                },
+				"random_seed": {
+	                     "_type" : "integer"
+                },
+				"Sample": {
+	                     "_type" : "integer"
+                },
+				"scissors": {
+	                     "_type" : "string"
+                },
+				"chunk_size": {
+	                     "_type" : "integer"
+                },
+				"slice": {
+	                     "_type" : "integer"
+                },
+				"split": {
+	                     "_type" : "string"
+                },
+				"alignSelector": {
+	                     "_type" : "string"
+                },
+				"automanual": {
+	                     "_type" : "integer"
+                },
+				"taxDepth": {
+	                     "_type" : "string"
+                },
+				"resultInQueryDir": {
+	                     "_type" : "integer"
+                },
+				"alignSelector": {
+	                     "_type" : "string"
+                },
+				"selfStopping": {
+	                     "_type" : "string"
+                },
+				"storeAlignments": {
+	                     "_type" : "string"
+                },
+				"blastparams": {
+					"blastWordSize": {
+					     "_type" : "integer"
+					}	                
+	            },
+				"censusScope_otherInput": {
+					"textBasedColumn": {
+					     "_type" : "integer"
+					},
+					"textBasedFileSeparator":{
+					     "_type" : "integer"
+					}
+	            }
+			},
+	        "io_domain" : {
+	            "input_subdomain" : {
+				"subject": {
+	                     "_type": "uri"
+	                 },
+				"query": {
+	                     "_type": "objectid",
+	                     "_multi_value": true
+	                 }
+	            },
+	            "output_subdomain" : {
+	                "_type": "file"
+	            }
+	        }
+	    }
+    }
+}   	
