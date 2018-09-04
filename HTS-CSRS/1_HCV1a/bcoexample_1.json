@@ -106,7 +106,7 @@
             "https://hive/data/nuc-read/557406\nhttps://hive/data/nuc-read/557407\nhttps://hive/data/557413/allCount-aligned.csv\n"
         ], 
         "output_uri_list": [
-            "https://hive/data/557413/allCount-aligned.csv", 
+        "https://hive/data/557413/allCount-aligned.csv", 
             "https//hive/data/557416/SNPProfile.csv"
         ], 
         "output_subdomain": [
@@ -117,7 +117,9 @@
         ]
     }, 
     "error_domain": [
-        "false negative alignment hits < 0.0010", 
-        "false positive mutation calls discovery < 0.0005"
+	"empirical_error": [ 
+       	    "false_negative_alignment_hits < 0.0010", 
+	"algorithmic_error": [
+            "false_positive_mutation_calls_discovery < 0.0005"
     ]
 }
