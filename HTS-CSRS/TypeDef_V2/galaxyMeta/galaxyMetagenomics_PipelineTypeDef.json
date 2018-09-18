@@ -1,50 +1,28 @@
 {
-    "antiviral_resistance_detection" : {
+    "Metagenomics_Galaxy" : {
         "_inherit" : "biocompute_base_type",
         "_fields" : {
-            "extension_domain":{
-                "FHIR_extension" : {
+            "extension_domain":null,
+            "execution_domain": {
+                "env_parameters": {
                     "_type" : "json",
-                    "_comment" : ["linkage to FHIR"],
-                    "_multi_value" : true,
-                    "_fields":{
-                        "FHIRendpoint_Resource": {
-                            "_type" : "string"
+                    "_fields": {
+                        "vCPU": {
+                            "_type" : "integer" 
                         },
-                        "FHIRendpoint_URL": {
-                            "_type" : "string"
+                        "Memory": {
+                            "_type" : "integer" 
                         },
-                        "FHIRendpoint_Ids": {
-                            "_type" : "string",
-                            "_multi_value" : true
+                        "SSD_Storage": {
+                            "_type" : "integer" 
                         }
                     }
-                },
-                "github_extension": {
-                    "_type" : "json",
-                    "_comment" : ["linkage to GitHub"],
-                    "_multi_value" : true,
-                    "_fields":{
-                        "github_URL": {
-                            "_type" : "string"
-                        },
-                        "gitHub_URI": {
-                            "_type" : "uri"
-                        },
-                           "github_repository":{
-                            "_type" : "string"
-                        }
-                    }
-                },
-                "IEEE" : {
-                    "_type" : "json",
-                    "_comment" : ["linkage to IEEE standards"]
                 }
             },
             "parametric_domain": {
-                "HIVE-hexagon" : {
+                "Bowtie2" : {
                     "_type" : "json",
-                    "_comment" : ["visible parameters for HIVE-hexagon"],
+                    "_comment" : ["visible parameters for Bowtie2"],
                     "_multi_value" : true,
                     "_fields":{
                         "seed": {
@@ -58,17 +36,25 @@
                         }
                     }
                 },
-                "HIVE-heptagon": {
+                "CensuScope": {
                     "_type" : "json",
-                    "_comment" : ["visible parameters for HIVE-heptagon"],
+                    "_comment" : ["visible parameters for CensuScope"],
                     "_multi_value" : true,
                     "_fields":{
-                        "minimum_coverage": {
+                        "iter": {
+                            "_comment" : ["number of iterations for CensuScope"],
                             "_type" : "integer"
                         },
-                        "freq_cutoff": {
-                            "_type" : "real"
-                        }
+                        "sample": {
+                            "_comment" : ["number of samples taken per iteration for CensuScope"],
+                            "_type" : "integer"
+                        },
+                        "tax": {
+                            "_comment" : ["taxonomic resolution for CensuScope results"],
+                            "_type" : "string",
+                            "_constraint" : {
+                                "_choice" : ["kingdom", "phylum", "class", "order", "family", "genus", "species", "leaf"]
+                            }
                     }
                 }
             },
@@ -102,36 +88,7 @@
                         }
                 }
             },
-            "error_domain": {
-                "empirical_error": {
-                    "_type" : "json",
-                    "_comment" : [""],
-                    "_optional" : true,
-                    "_fields":{
-                        "false negative alignment hits": {
-                            "_type" : "string"
-                        },
-                        "false discovery": {
-                            "_type" : "string"
-                        }
-                    }
-                },
-                "algorithmic_error": {
-                    "_type" : "json",
-                    "_comment" : [""],
-                    "_optional" : true,
-                    "_fields":{
-                        "false positive mutation calls discovery": {
-                            "_type" : "string"
-                        },
-                        "false_positive_mutation_calls_discovery": {
-                            "_type" : "string"
-                        },
-                        "false_discovery": {
-                            "_type" : "string"
-                        }
-                    }
-                }
+            "error_domain": null
             }
         }
     }

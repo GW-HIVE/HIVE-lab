@@ -7,6 +7,7 @@ with open(galaxy, 'rU') as file:
     data = json.load(file)
 tool = {}
 for i in range(len(data['steps'].keys())):
+#for i in data['steps'].keys()[9]:
     tool[i] = {}
     
     print data['steps'][str(i)]['id']
@@ -17,17 +18,23 @@ for i in range(len(data['steps'].keys())):
     tool[i]['tool_version'] = data['steps'][str(i)]['tool_version']
     print data['steps'][str(i)]['tool_id']
     tool[i]['tool_id'] = data['steps'][str(i)]['tool_id']
-    tool[i]['input_uri_list'] = {}
-    for n in data['steps'][str(i)]['inputs']:
-        print n['name'], n['description']
-        tool[i]['input_uri_list']['name'] = n['name']
-        tool[i]['input_uri_list']['URI'] = n['description']
+    tool[i]['input_list'] = []
+    for step in data['steps'][str(i)]['inputs']:
+        print step['name'], step['description']
+        a = {'name': step['name'], 'description': step['description']}
+        tool[i]['input_list'].append(a)
+        # tool[i]['input_list']['name']: step['name']
+        # tool[i]['input_list']['URI'] = step['description']
     print ''
-    tool[i]['output_uri_list'] = {}
-    for n in data['steps'][str(i)]['outputs']:
-        print n['name'], n['type']
-        tool[i]['output_uri_list']['address'] = str(n['name']+'.'+n['type'])
+    tool[i]['output_list'] = []
+    for step in data['steps'][str(i)]['outputs']:
+        print step['name'], step['type']
+        a = {'name': str(step['name']+'.'+step['type']), 'type': step['type']}
+#        tool[i]['output_list']['address'] = 
+        tool[i]['output_list'].append(a)
     print '\n'
 json_data = json.dumps(tool)
 
-print(json_data)
+#print(json_data)
+for i in tool: 
+    print json.dumps(tool[i])
