@@ -506,22 +506,22 @@
         ], 
         "env_parameters": [
             {
-                "vCPU":"16",
-                "Memory":"122",
-                "SSD_Storage":"320"
+                "vCPU": 16,
+                "Memory": 122,
+                "SSD_Storage": 320
             }
         ]
     },
     "parametric_domain": {
         "Bowtie2" : {
-            "seed": "1",
-            "minimum_match_len": "66", 
-            "divergence_threshold_percent": "15"
+            "seed": 11,
+            "minimum_match_len": 66, 
+            "divergence_threshold_percent": 0.15
         },
         "CensuScope" : {
             "tax": "leaf",
-            "iter": "10",
-            "sample": "1200"
+            "iter": 10,
+            "sample": 1200
         }
     }, 
     "io_domain": {
