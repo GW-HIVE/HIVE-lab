@@ -12,7 +12,7 @@
     ],
     "_fields" : {
         "_comment" : "List of fields of the BioCompute Object type",
-
+		"_comment" : " by defult each object has _id field of type objectid and its not described here"
         "provenance_domain": {
             "name" : {
                 "_type" :"string",
@@ -25,13 +25,16 @@
                 "_optional" : true
             },
             "version" : {
-                "_type" :"version",
+                "_type" : "version",
                 "_comment" : "version of the BioCompute Object"
             },
             "digital_signature" : {
-                "_type" : "blob",
+                "_type" : "string",
                 "_comment" : "Digital signature of BioCompute Object by Authority",
-                "_read_only" : true
+                "_read_only" : true,
+				"_constraint" : {
+					"regex" : "[A-Za-z0-9]+"
+				}
             },
             "review" : {
                 "_multi_value" : true,
@@ -47,20 +50,22 @@
                     "_type": "contributor" ,
                     "_multi_value" : true
                 },
+				"date" : {
+					"_type" : "dateTime"
+				}
                 "comment" : {
                     "_type" : "string",
                     "_optional" : true,
                     "_multi_value" : true
                 },
                 "_optional" : true
+			},
+            "derived_from": {
+                "_type": "objectid",
+                "_optional" : true,
+				"_comment" : "value of _id field of another bio compute object"
             },
-            "derived_from" : {
-                "parent_biocompute_object": {
-                    "_type": "objectid",
-                    "_optional" : true
-                }
-            },
-            "obsolete" : {
+            "obsolete_after" : {
                 "_type": "datetime" , 
                 "_optional" : true
             },
@@ -77,8 +82,7 @@
             "created" : {
                 "_type" :"datetime",
                 "_comment" : "Date and time of the BioCompute Object creation",
-                "_read_only" : true,
-                "_multi_value" : true
+                "_read_only" : true
             },
             "modified" : {
                 "_type" :"datetime",
@@ -90,7 +94,7 @@
                 "_multi_value" : true
             },
             "license" : {
-                "_type" : "uri",
+                "_type" : "url",
                 "_comment" : "Creative Commons licence or other licence information space. Recommended licence can be Attribution 4.0"
             }
         },
@@ -119,8 +123,7 @@
                 "_multi_value" : true
             },
             "pipeline_steps" : {
-                "_layout": "array",
-                "tool" : { 
+                "tool" : {
                     "_multi_value" : true,
                     "name" : {
                         "_type" : "string",
@@ -141,17 +144,17 @@
                             "_type" :"string",
                             "_comment" : "Public searchable name for reference or prereq"
                         },
-                        "URI":{
-                            "_type" : "uri"
+                        "URL":{
+                            "_type" : "url"
                         },
                         "_multi_value" : true
                     },
                     "input_list" : {
-                        "_type" : "uri",
+                        "_type" : "url",
                         "_multi_value" : true
                     },
                     "output_list" : {
-                        "_type" : "uri",
+                        "_type" : "url",
                         "_multi_value" : true
                     }
                 }
@@ -185,8 +188,8 @@
                 "version" : {
                     "_type" : "version"
                 },  
-                "uri" : {
-                    "_type" : "uri",
+                "url" : {
+                    "_type" : "url",
                     "_optional" : true
                 }
             },
@@ -200,19 +203,17 @@
                     "_multi_value" : true
                 }
             },
-            "environmental_parameters" : {
+            "environment_variables" : {
                 "_type" : "keyval",
                 "_comment" : "all fields in this here should be defined in inheriting BioCompute subtypes",
                 "_multi_value" : true
             }
         },
-
         "parametric_domain" : {
             "_type" : "json",
             "_comment" : "all fields in this domain should be defined in inheriting BioCompute subtypes",
             "_comment" : "see example in bco_type_examples.json object parametric_domain_type_definition_examples"
         },
-
         "io_domain" : {
             "input_subdomain" : {
                 "_type" : "json",
@@ -224,7 +225,6 @@
                 "_comment" : "output is a file object"
             }
         },
-
         "error_domain": {
             "empirical_error": {
                 "_type" : "json",

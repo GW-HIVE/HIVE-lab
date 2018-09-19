@@ -13,21 +13,21 @@
             "json" : "any json formatted subobject, the structure to json is not imposed by base biocompute type, but should follow guidelines of using the predefined primitives"
         }
     },
-    "address": {
-        "_type": "string",
-        "_comment": "schema://domain/resource_locator"
-    },
     "objectid": {
         "_type": "string",
-        "_comment": "[schema://domain/1231231]"
+        "_constraint": {
+        	"regex" : "url_regex"
+        }
     },
     "version": {
         "_type": "string",
         "_comment": "suggestion major[.minor[.build_nunber]]"
     }, 
     "email":{ 
-        "type": "string",
-        "_comment": "[string/@/string]"
+        "_type": "string",
+        "_constraint": {
+        	"regex" : "email_regex"
+        }
     },
     "keyval" : {
         "key" : {
@@ -46,33 +46,33 @@
             "_multi_value" : true
         }
     },
-    "uri": {
+    "url": {
         "address": {
-            "_type": "string" 
+            "_type": "string",
+	        "_constraint": {
+	        	"regex" : "url_regex"
+	        }
         },
         "access_time": {
             "_type" : "dateTime",
             "_optional" : true
+        },
+		"sha1_chksum": {
+			"_type": "string",
+            "_optional" : true,
+			"_constraint" : {
+				"regex" : "[A-Za-z0-9]+"
+			}
         }
     },
     "contribution": {
         "_comment": "taken from https://doi.org/10.1186/2041-1480-4-37",
-        "type" : {
-            "_constraint" :{
-                "_choice" : ["authoredBy", "contributedBy", "createdAt", "createdBy", "createdWith", "curatedBy", "derivedFrom", "importedBy", "importedFrom", "providedBy", "retrievedBy", "retrievedFrom", "sourceAccessedBy"]
-            }
+        "_type" : "string",
+        "_constraint" :{
+           "_choice" : ["authoredBy", "contributedBy", "createdAt", "createdBy", "createdWith", "curatedBy", "derivedFrom", "importedBy", "importedFrom", "providedBy", "retrievedBy", "retrievedFrom", "sourceAccessedBy"]
         }
     },
-    "orcid": {
-        "_comment": "",
-        "orc_id": {
-            "_type": "objectid"
-        },
-        "contribution": {
-            "_type": "contribution"
-        }
-    },
-    "entity": {
+    "contributor": {
         "_comment": "",
         "name": {
             "_type": "string",
@@ -87,12 +87,15 @@
             "_optional" : true
         },
         "contribution": {
-            "_type": "contrabution"
+            "_type": "contribution"
+        },
+        "orc_id": {
+            "_type": "objectid"
         }
     },
     "file": {
-        "uri" : {
-            "_type" : "uri"
+        "url" : {
+            "_type" : "url"
         },
         "mime": { 
             "_type" : "string",
@@ -116,13 +119,6 @@
         "access_time":{
             "_type": "dateTime",
             "_optional" : true
-        }
-    },
-    "contributor": {
-        "type" : {
-            "_constraint" :{
-                "_choice" : ["orcid", "entity"]
-            }
         }
     }
 }
