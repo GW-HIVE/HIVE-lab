@@ -11,33 +11,53 @@
         "For each field default value for '_multi_value', '_optional', and '_read_only' key is 'false' "
     ],
     "_fields" : {
-        "_comment" : "List of fields of the BioCompute Object type",
-		"_comment" : " by defult each object has _id field of type objectid and its not described here"
+        "_comment" : [
+            "List of fields of the BioCompute Object type",
+            "by defult each object has _id field of type objectid and its not described here"
+        ],
+
+        "BCO_id":{
+            "_type" : "string",
+            "_read_only" : true,
+            "_comment" : [
+                "A unique identifier that should be applied to each BCO instance, assigned by a BCO database engine.",
+                "IDs should never be reused"
+            ]
+        },
+        "type": {
+            "_type": "_type",
+            "_read_only" : true
+        },
+        "digital_signature" : {
+            "_type" : "string",
+            "_read_only" : true,
+            "_comment" : ["Digital signature of BioCompute Object by Authority"],
+            "_constraint" : {
+                "regex" : "[A-Za-z0-9]+"
+            }
+        },
+
         "provenance_domain": {
             "name" : {
                 "_type" :"string",
                 "_comment" : "Public searchable name for BioCompute Object"
             },
-            "structured_name" : {
+            "structured_name" :{
                 "_type" :"string",
-                "_comment" : "Name of the BioCompute in accordance to guidelines",
-                "_comment" : "??? Raja will put pointers into naming guidance",
-                "_optional" : true
+                "_optional" : true,
+                "_comment" :[
+                    "templated computable text field designed to represent a BCO instance name in visible interfaces.",
+                    "This field can refer to other fields within the same or other objects."
+                ]
+
             },
             "version" : {
                 "_type" : "version",
                 "_comment" : "version of the BioCompute Object"
             },
-            "digital_signature" : {
-                "_type" : "string",
-                "_comment" : "Digital signature of BioCompute Object by Authority",
-                "_read_only" : true,
-				"_constraint" : {
-					"regex" : "[A-Za-z0-9]+"
-				}
-            },
             "review" : {
                 "_multi_value" : true,
+                "_optional" : true,
                 "status" : {
                     "_type" : "string",
                     "_constraint" : {
@@ -46,24 +66,23 @@
                     "_comment" : "Current verification status of the BioCompute Object",
                     "_default_value" : "unreviewed"
                 },
-                "reviewer" : { 
-                    "_type": "contributor" ,
+                "reviewer" : {
+                    "_type": "contributor",
                     "_multi_value" : true
                 },
-				"date" : {
-					"_type" : "dateTime"
-				}
-                "comment" : {
+                "date" : {
+                    "_type" : "dateTime"
+                },
+                "reviewer_comment" : {
                     "_type" : "string",
                     "_optional" : true,
                     "_multi_value" : true
-                },
-                "_optional" : true
-			},
+                }
+            },
             "derived_from": {
                 "_type": "objectid",
                 "_optional" : true,
-				"_comment" : "value of _id field of another bio compute object"
+                "_comment" : ["value of _id field of another bio compute object"]
             },
             "obsolete_after" : {
                 "_type": "datetime" , 
@@ -81,12 +100,12 @@
             },
             "created" : {
                 "_type" :"datetime",
-                "_comment" : "Date and time of the BioCompute Object creation",
+                "_comment" : ["Date and time of the BioCompute Object creation"],
                 "_read_only" : true
             },
             "modified" : {
                 "_type" :"datetime",
-                "_comment" : "Date and time of the BioCompute Object was last modified",
+                "_comment" : ["Date and time of the BioCompute Object was last modified"],
                 "_read_only" : true
             },
             "contributors" : {
@@ -94,19 +113,21 @@
                 "_multi_value" : true
             },
             "license" : {
-                "_type" : "url",
-                "_comment" : "Creative Commons licence or other licence information space. Recommended licence can be Attribution 4.0"
+                "_type" : "uri",
+                "_optional" : true,
+                "_comment" : ["Creative Commons licence or other licence information space. Recommended licence can be Attribution 4.0"]
             }
         },
 
         "usability_domain" : {
             "_type" : "string",
-            "_comment" : "Text from biospec",
+            "_comment" : ["Text from biospec"],
             "_multi_value" : true
         },
 
         "extension_domain":{
             "_type" : "json",
+            "_optional" : true,
             "_comment" : [
                 "all fields in this domain are BioCompute specific and should be defined in inherited BioCompute type",
                 "This domain allows for the addition of "
@@ -120,6 +141,7 @@
             },
             "xref" : {
                 "_type" : "xref",
+                "_optional" : true,
                 "_multi_value" : true
             },
             "pipeline_steps" : {
@@ -127,7 +149,7 @@
                     "_multi_value" : true,
                     "name" : {
                         "_type" : "string",
-                        "_comment" : "this is a recognized name of the software tool" 
+                        "_comment" : ["this is a recognized name of the software tool"] 
                     },
                     "description" : {
                        "_type" : "string"
@@ -139,22 +161,23 @@
                        "_type" : "version"
                     },
                     "prerequisite" : {
+                        "_multi_value" : true,
+                        "_optional" : true,
                         "_comment" : "reference or required prereqs",
                         "name" : {
                             "_type" :"string",
-                            "_comment" : "Public searchable name for reference or prereq"
+                            "_comment" : ["Public searchable name for reference or prereq"]
                         },
-                        "URL":{
-                            "_type" : "url"
-                        },
-                        "_multi_value" : true
+                        "source":{
+                            "_type" : "uri"
+                        }
                     },
                     "input_list" : {
-                        "_type" : "url",
+                        "_type" : "uri",
                         "_multi_value" : true
                     },
                     "output_list" : {
-                        "_type" : "url",
+                        "_type" : "uri",
                         "_multi_value" : true
                     }
                 }
@@ -165,7 +188,7 @@
             "script_type" : {
                "_type" :"string",
                 "_constraint" : {
-                    "_choice" : [ "url", "text" ]
+                    "_choice" : [ "uri", "text" ]
                 }
             },
             "script" : {
@@ -188,8 +211,8 @@
                 "version" : {
                     "_type" : "version"
                 },  
-                "url" : {
-                    "_type" : "url",
+                "uri" : {
+                    "_type" : "uri",
                     "_optional" : true
                 }
             },
@@ -198,27 +221,32 @@
                 "name" : {
                     "_type" : "string"
                 }, 
-                "url" : {
-                    "_type" : "url",
+                "uri" : {
+                    "_type" : "uri",
                     "_multi_value" : true
                 }
             },
             "environment_variables" : {
                 "_type" : "keyval",
-                "_comment" : "all fields in this here should be defined in inheriting BioCompute subtypes",
-                "_multi_value" : true
+                "_multi_value" : true,
+                "_comment" : "all fields in this here should be defined in inheriting BioCompute subtypes"
             }
         },
+        
         "parametric_domain" : {
             "_type" : "json",
-            "_comment" : "all fields in this domain should be defined in inheriting BioCompute subtypes",
-            "_comment" : "see example in bco_type_examples.json object parametric_domain_type_definition_examples"
+            "_comment" : [
+                "all fields in this domain should be defined in inheriting BioCompute subtypes",
+                "see example in bco_type_examples.json object parametric_domain_type_definition_examples"
+            ]
         },
+
         "io_domain" : {
             "input_subdomain" : {
                 "_type" : "json",
                 "_comment" : "all fields in this domain are BioCompute specific and should be defined in inherited BioCompute type"
             },
+
             "output_subdomain" : {
                 "_type" : "file",
                 "_multi_value" : true,
