@@ -95,7 +95,7 @@
         "uri" : {
             "_type" : "uri"
         },
-        "mime": { 
+        "mime-type": { 
             "_type" : "string",
             "_optional" : true
         }

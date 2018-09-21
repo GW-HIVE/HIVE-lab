@@ -12,8 +12,7 @@
     ],
     "_fields" : {
         "_comment" : [
-            "List of fields of the BioCompute Object type",
-            "by defult each object has _id field of type objectid and its not described here"
+            "List of fields of the BioCompute Object type"
         ],
 
         "BCO_id":{
@@ -221,15 +220,14 @@
                 "name" : {
                     "_type" : "string"
                 }, 
-                "uri" : {
-                    "_type" : "uri",
+                "url" : {
+                    "_type" : "string",
                     "_multi_value" : true
                 }
             },
             "environment_variables" : {
                 "_type" : "keyval",
-                "_multi_value" : true,
-                "_comment" : "all fields in this here should be defined in inheriting BioCompute subtypes"
+                "_multi_value" : true
             }
         },
         

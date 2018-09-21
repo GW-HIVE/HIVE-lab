@@ -71,30 +71,28 @@
         "io_domain" : {
             "input_subdomain" : {
                 "_type" : "json",
-                "_comment" : ["visible parameters for HIVE-hexagon"],
+                "_comment" : ["HIVE uses 'query' to define sequences reads and 'subject to define reference genome"],
                     "query" :{
                         "_type" : "json",
                         "_multi_value" : true,
-                        "_comment" : [""],
                         "_fields":{
                             "name":{
                                 "_type" : "string"
                             },
-                            "URI": {
+                            "source": {
                                 "_type" : "uri"
                             }
                         }
                     },
                     "subject": {
                         "_type" : "json",
-                        "_comment" : [""],
                         "_multi_value" : true,
                         "_fields":{
                             "name":{
                                 "_type" : "string"
                             },
-                            "URI": {
-                                "_type" : "string"
+                            "source": {
+                                "_type" : "uri"
                             }
                         }
                     }
@@ -103,7 +101,7 @@
         "error_domain": {
             "empirical_error": {
                 "_type" : "json",
-                "_comment" : [""],
+                "_comment" : ["measured by running the algorithm on multiple data samples of the usability domain or in carefully designed in-silico spiked data"],
                 "_optional" : true,
                 "_fields":{
                     "false negative alignment hits": {
@@ -116,7 +114,7 @@
             },
             "algorithmic_error": {
                 "_type" : "json",
-                "_comment" : [""],
+                "_comment" : ["measured in repeatability experiments of multiple runs or using some rigorous mathematical modeling of the accumulated errors"],
                 "_optional" : true,
                 "_fields":{
                     "false positive mutation calls discovery": {
