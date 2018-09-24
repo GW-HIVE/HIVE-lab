@@ -1,11 +1,11 @@
 {
     "BCO_id": "https://github.com/GW-HIVE/HIVE-lab/blob/master/HTS-CSRS/1_HCV1a_V2/HCV1a",
-    "type": "antiviral_resistance_detection", 
+    "type": "antiviral_resistance_detection",
+    "digital_signature": "905d7fce3f3ac64c8ea86f058ca71658", 
     "provenance_domain": {
         "name": "HCV1a ledipasvir resistance SNP detection", 
         "structured_name": "HCV1a [taxID:31646] ledipasvir [PubChem:67505836] resistance SNP [SO:0000694] detection",
         "version": "2.9",
-        "digital_signature": "905d7fce3f3ac64c8ea86f058ca71658", 
         "review": [
             {
                 "status": "approved",
@@ -269,18 +269,19 @@
             }
         ], 
         "env_parameters": {
-            "HOSTTYPE" :"x86_64-linux"
+            "key": "HOSTTYPE", 
+            "value" : "x86_64-linux"
         }
     }, 
     "parametric_domain": {
         "HIVE-hexagon" : { 
-            "seed": "14",
-            "minimum_match_len": "66", 
-            "divergence_threshold_percent": "30"
+            "seed": 14,
+            "minimum_match_len": 66, 
+            "divergence_threshold_percent": 0.30
         },
         "HIVE-heptagon": {
-            "minimum_coverage": "15", 
-            "freq_cutoff": "0.10"
+            "minimum_coverage": 15, 
+            "freq_cutoff": 0.10
         } 
     }, 
     "io_domain": {
