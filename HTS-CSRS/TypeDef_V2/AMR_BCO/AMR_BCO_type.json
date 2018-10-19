@@ -31,7 +31,7 @@
                      "_type": "uri"
                  },
             "query": {
-                     "_type": "objectid"
+                     "_type": "objectid",
                      "_multi_value": true
                  }
             },

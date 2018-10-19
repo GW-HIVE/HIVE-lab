@@ -1,35 +1,53 @@
 {
-    "_type": "BioCompute_Antibiotic_Resistance_Detection_Type",
+    "BCO_id": "https://github.com/biocompute-objects/BCO_Spec_V1.2/blob/hadley_local/AMR.json", 
+    "type": "BioCompute_Antibiotic_Resistance_Detection_Type",
+    "digital_signature": "642d7gcd3f2ac64a8e235dc8adff058ca7a63",
+    "bco_spec_version" : "v1.2",
     "provenance_domain": {
         "name": "Antibiotic Restance Gene Detection",
         "structured_name": "Antibiotic Resistance Gene Dection Pipeline",
         "version": "1.1",
-        "digital_signature": "642d7gcd3f2ac64a8e235dc8adff058ca7a63",
         "review": [
             {
                 "status": "approved",
-                "comment": "Approved by Dr. Simonyan. Waiting for approval from 2nd Reviewer",
+                "reviewer_comment": "Approved by Dr. Simonyan. Waiting for approval from 2nd Reviewer",
                 "reviewer": {
-                    "type": "orcid",
+					"name": "Vahan Simonyan",
+					"affiliation": "FDA",
+					"email": "vahan.simonyan@fda.hhs.gov",
+					"contribution": ["curatedBy"],
                     "orcid": "http://orcid.org/0000-0002-4868-4785"
                 }
-            }
+            },
+            {
+                "status": "approved",
+                "reviewer_comment": ["Approved by GW staff. Waiting for approval from FDA Reviewer"],
+                "reviewer": {
+                    "name": "Charles Hadley King", 
+                    "affiliation": "George Washington University", 
+                    "email": "hadley_king@gwu.edu",
+                    "contribution": ["curatedBy"],
+                    "orcid": "https://orcid.org/0000-0003-1409-4549"
+                }
+			}
         ],
-        "embargo": {
+        "derived_from" : null,
+        "obsolete" : "2118-09-26T14:43:43-0400",
+        "embargo" : {
+            "start_time": "2000-09-26T14:43:43-0400",
             "end_time": "2018-03-20T19:40:17-0500"
         },
         "created": "2018-03-19T09:40:17-0500",
         "modified": "2018-03-21T21:29:14-0500",
-        "authors": [
+        "contributors": [
             {
-                "type": "entity",
-                "entity": {
-                    "name": "Alin Voskanian-kordi",
-                    "affiliation": "FDA",
-                    "email": "alin.voskanian-kordi@fda.hhs.gov"
-                }
+                "name": "Alin Voskanian-kordi",
+                "affiliation": "FDA",
+                "email": "alin.voskanian-kordi@fda.hhs.gov",
+                "contribution": ["authoredBy"]
             }
-        ]
+        ],
+        "license": "https://spdx.org/licenses/CC-BY-4.0.html"
     },
     "usability_domain": [
         "Detect antibiotic resistance gene or SNP presence using the CARD datasets"
@@ -43,9 +61,9 @@
         ],
         "xref": [
             {
-                "source": "Antibiotic Resistance References",
-                "db": "CARD",
-                "id": "nucleotide_fasta_protein_overexpression_model.fasta,nucleotide_fasta_protein_variant_model.fasta,nucleotide_fasta_rRNA_gene_variant_model.fasta,nucleotide_fasta_protein_knockout_model.fasta,nucleotide_fasta_protein_homolog_model.fasta ",
+                "namespace": "Antibiotic Resistance References",
+                "name": "The Comprehensive Antibiotic Resistance Database",
+                "ids": ["nucleotide_fasta_protein_overexpression_model.fasta", "nucleotide_fasta_protein_variant_model.fasta", "nucleotide_fasta_rRNA_gene_variant_model.fasta", "nucleotide_fasta_protein_knockout_model.fasta", "nucleotide_fasta_protein_homolog_model.fasta"],
                 "access_time": "2018-02-02T10:15-05:00"
             }
         ],
@@ -61,6 +79,13 @@
                             "name": "CARD: Comprehensive Antibiotic Resistance Database",
                             "uri": {
                                 "address": "https://card.mcmaster.ca/latest/data",
+                                "access_time": "2018-02-20T09:40:17-0500"
+                            }
+                        },
+                        {
+                            "name": "HIVE",
+                            "uri": {
+                                "address": "https://maxihive.fda.gov/",
                                 "access_time": "2018-02-20T09:40:17-0500"
                             }
                         }
