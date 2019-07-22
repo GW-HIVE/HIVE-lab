@@ -15,9 +15,12 @@ Unsupported License to this version of the software.
 
 
 
-| Downloadable Files | File Size | Release Notes|
-|--------------------|-----------|---------------|
-| [filtered_nt_July_2018](https://hive.biochemistry.gwu.edu/prd/filterednt//content/filtered_nt_July_2018.fasta)| 168G|Coming soon!|
+|Version | Downloadable Files | File Size | Release Notes|NCBI Download Date|
+|--------|--------------------|-----------|--------------|------------------|
+|Vesrion 6.0| [Filtered NT v6.0](https://hive.biochemistry.gwu.edu/prd/filterednt//content/filtered_nt_July_2018.fasta)| 168G|[Release Notes v6](https://hive.biochemistry.gwu.edu/filterednt/releasenotesv6)|July 2018|
+|Version 5.0|[Filtered_NT v5.0](https://hive.biochemistry.gwu.edu/prd//filterednt/content/Filtered_NTv5.0.fasta)|131G|[Release Notes v5.0](https://hive.biochemistry.gwu.edu/filterednt/releasenotesv5)|May 2017|
+|Version 4.0| [Filtered NT v4.0](https://hive.biochemistry.gwu.edu/prd//filterednt/content/Filtered_NTv4.0.fasta)|110G|[Release Notes v4.0](https://hive.biochemistry.gwu.edu/filterednt/releasenotesv4)|July 2016|
+
 
 
 
